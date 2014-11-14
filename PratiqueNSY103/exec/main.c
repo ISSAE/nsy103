@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void main(int argc, char **argv) {
-     printf("nombre de param = %d %s", argc, argv[0]);
+     printf("nombre de param = %d %s\n", argc, argv[0]);
      printf("pid=%d,ppid=%d\n", getpid(), getppid());
      if (argc != 3) {
          printf("Besoin de deux paramètres\n");

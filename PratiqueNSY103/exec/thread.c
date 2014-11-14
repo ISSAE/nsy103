@@ -11,7 +11,7 @@ void* f_thread(void *i) {
 main() {
   int i;
   for (i=0; i<3; i++) {
-        if (pthread_create(pthread_id + i, NULL, f_thread,&i) == -1)
+        if (pthread_create(&(pthread_id[i]), NULL, f_thread,&i) == -1)
      fprintf(stderr, "erreur de creation pthread numero %d\n", i);
   }
      printf ("je suis la thread initiale %d.%ld\n",getpid(), pthread_self()); 
