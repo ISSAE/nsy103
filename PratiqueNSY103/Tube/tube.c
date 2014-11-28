@@ -21,10 +21,9 @@ pere(){
     exit(0);
 }
 fils() {
-    printf("Fils %d -> %d", getppid(), getpid());
+    printf("Fils %d -> %d\n", getppid(), getpid());
     read (pip[0],buf,5);
-    buf[5]=0; 
-    write (1, buf, 5);
-    printf(" buf = %s", buf);
+    buf[5]='\n'; 
+    write (1, buf, 6);
     exit(0);
 }

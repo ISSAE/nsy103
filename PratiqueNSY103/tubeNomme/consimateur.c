@@ -13,6 +13,18 @@ main() {
   read (tub,buf,10);
   buf[10]=0;
   printf("J’ai lu %s\n", buf);
- close (tub);
+  if (unlink("fictub") < 0) {
+     perror ("Unlink avant close");
+  }
+  sleep(60);
+  printf("Apres unlink");
+  read (tub,buf,10);
+  buf[10]=0;
+  printf("J’ai lu %s\n", buf);
+  if (close (tub) < 0) {
+      perror("close Apres unlink");
+  }
+
+  
  exit(0); 
 }
