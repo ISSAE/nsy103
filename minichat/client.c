@@ -15,6 +15,8 @@
 #include <netdb.h>
 #include <string.h>
 #include <stdio.h>
+
+#define DEBUG 1
 /* L'adresse du serveur et port 
  */
 struct sockaddr_in *autre;
