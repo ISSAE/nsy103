@@ -20,7 +20,7 @@
 #include <netdb.h>
 #include <string.h>
 #include <stdio.h>
-
+int SockUdp(char *, int);
 #define DEBUG 1
 struct sockaddr_in *autre[100]; /* Table des clients qui ont contacte
                                     le serveur */
@@ -60,14 +60,17 @@ void TraitementSock(int sock) {
   u_short numappelant;
   int taillemessage;
   int i;
-  int len;
+  socklen_t len;
   struct sockaddr_in *appellant= (struct sockaddr_in *) 
     malloc(sizeof(struct sockaddr_in));
+  
    len = sizeof(struct sockaddr_in);
   /* Le client commance par envoyer la taille du message : que le serveur recupere */
   /* On recupère aussi dans appellant l'adresse du client */
   recvfrom(sock, &taillemessage, sizeof(taillemessage), 0, 
 	   (struct sockaddr *) appellant, &len);
+  
+ 
 printf("taille = %d\n", len);
     
   printf("direct port appelant = %d\n",appellant->sin_port);
@@ -106,7 +109,7 @@ printf("taille = %d\n", len);
  * 
  */
 
-main () {
+int main(int argc, char** argv) {
   int 	sockrec;  /* Socket de reception / Emission    */
   fd_set 	readf;    /* L'esemble de descripteur d'entree */
   int 	i;

@@ -19,6 +19,7 @@
  * */
 #include <sys/types.h>          /* See NOTES */
 #include <sys/socket.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <netdb.h>
@@ -94,11 +95,11 @@ struct sockaddr_in *CreerSockAddr(char *name, int port) {
 
   struct hostent *haddr=NULL;
   struct in_addr **pptr;
-  char str[32];
+  //char str[32];
 #ifdef DEBUG
   printf("IN CreerSockAddr %s,%d\n", name, port);
 #endif
-  bzero(adsock, sizeof(adsock));
+  bzero(adsock, sizeof(struct sockaddr_in));
   if (name) {
     haddr = gethostbyname(name);
     if (haddr <= 0) {
@@ -107,7 +108,7 @@ struct sockaddr_in *CreerSockAddr(char *name, int port) {
     else {
       pptr = (struct in_addr **) haddr->h_addr_list;
       memcpy(&adsock->sin_addr, *pptr, sizeof(struct in_addr));
-      inet_ntop(haddr->h_addrtype, *pptr, str, sizeof(str));
+      //inet_ntop(haddr->h_addrtype, *pptr, str, sizeof(str));
 #ifdef DEBUG      
       printf("%s", str);
 #endif
@@ -136,7 +137,7 @@ struct sockaddr_in *CreerSockAddr(char *name, int port) {
 	
 int SockUdp(char *nom, int numport) {
   int sock;
-  int r=1;
+  //int r=1;
   /* adsock : adresse de la socket d'écoute */
   struct sockaddr_in *adsock = (struct sockaddr_in *) 
     CreerSockAddr(nom, numport);
