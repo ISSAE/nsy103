@@ -15,8 +15,8 @@
 #include <netdb.h>
 #include <string.h>
 #include <stdio.h>
+#include "wrsock.h"
 
-#define DEBUG 1
 /* L'adresse du serveur et port 
  */
 struct sockaddr_in *autre;
@@ -37,8 +37,6 @@ TraitementClavier (int sock)	/* Socket E/S */
 {
   char buf[256];
   int taillemessage;
-  int i;
-
 
   taillemessage = read(0, buf, 256);
   /* Envoyer a tous les client la taille du message puis le message */
@@ -96,7 +94,7 @@ TraitementSock (int sock) {
  * ce numero est envoyer au serveur qui l'tilisera pour repondre        
  */
 
-main (int argc, char **argv) {
+int main (int argc, char **argv) {
   int sockrec;      /* Socket d'emission reception */
 
   fd_set readf;     /* L'ensemble de descripteur en lecture a utilise avec select */
@@ -111,7 +109,7 @@ main (int argc, char **argv) {
 #ifdef DEBUG
   printf ("\n : Info : Client numero => %d \n", num);
 #endif
-  /*Creartion de la socket du client 2000+numero client */
+  /*Creation de la socket du client 2000+numero client */
   sockrec = SockUdp (NULL, 2000 + num);
 
   /* autre adresse du serveur de chating */

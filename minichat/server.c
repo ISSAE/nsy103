@@ -20,7 +20,8 @@
 #include <netdb.h>
 #include <string.h>
 #include <stdio.h>
-int SockUdp(char *, int);
+#include "wrsock.h"
+
 #define DEBUG 1
 struct sockaddr_in *autre[100]; /* Table des clients qui ont contacte
                                     le serveur */
