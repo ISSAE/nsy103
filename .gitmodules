@@ -4,3 +4,6 @@
 [submodule "Ibrahim-0507"]
 	path = Ibrahim-0507
 	url = git@github.com:Ibrahim-0507/Linux_minichat.git
+[submodule "RaghebGhandour"]
+	path = RaghebGhandour
+	url = https://bitbucket.org/f0unix/linuxchat.git
