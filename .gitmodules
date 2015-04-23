@@ -1,0 +1,3 @@
+[submodule "AbedBilani"]
+	path = AbedBilani
+	url = git@github.com:abedbilani/chat.git
