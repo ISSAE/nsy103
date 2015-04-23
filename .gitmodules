@@ -16,3 +16,6 @@
 [submodule "AbedHabboub"]
 	path = AbedHabboub
 	url = git@github.com:AbedHabboub/MiniChat.git
+[submodule "NehmatSlim"]
+	path = NehmatSlim
+	url = git@github.com:ns7900f/linux.git
