@@ -10,3 +10,9 @@
 [submodule "PeterOo"]
 	path = PeterOo
 	url = git@github.com:peter0o/linuxChat.git
+[submodule "AbedHabboubTCP"]
+	path = AbedHabboubTCP
+	url = git@github.com:AbedHabboub/MiniChatTCP.git
+[submodule "AbedHabboub"]
+	path = AbedHabboub
+	url = git@github.com:AbedHabboub/MiniChat.git
