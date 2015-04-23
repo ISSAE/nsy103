@@ -7,3 +7,6 @@
 [submodule "RaghebGhandour"]
 	path = RaghebGhandour
 	url = https://bitbucket.org/f0unix/linuxchat.git
+[submodule "PeterOo"]
+	path = PeterOo
+	url = git@github.com:peter0o/linuxChat.git
