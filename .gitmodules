@@ -25,3 +25,6 @@
 [submodule "NehmatHallal"]
 	path = NehmatHallal
 	url = git@github.com:nehmat2015/minichat_tcp.git
+[submodule "MohamadMohaidly"]
+	path = MohamadMohaidly
+	url = git@github.com:mohammadmoahidly/TalkProject.git
