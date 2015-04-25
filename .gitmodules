@@ -31,3 +31,6 @@
 [submodule "AdelYounes"]
 	path = AdelYounes
 	url = https://github.com/adelyounes/Projet-Lunix
+[submodule "SafaHjeij"]
+	path = SafaHjeij
+	url = https://github.com/safaahjj/projet_chat_linux.git
