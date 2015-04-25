@@ -28,3 +28,6 @@
 [submodule "MohamadMohaidly"]
 	path = MohamadMohaidly
 	url = git@github.com:mohammadmoahidly/TalkProject.git
+[submodule "AdelYounes"]
+	path = AdelYounes
+	url = https://github.com/adelyounes/Projet-Lunix
