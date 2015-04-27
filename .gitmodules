@@ -34,3 +34,6 @@
 [submodule "SafaHjeij"]
 	path = SafaHjeij
 	url = https://github.com/safaahjj/projet_chat_linux.git
+[submodule "MariamBS"]
+	path = MariamBS
+	url = https://github.com/mariambs/chat.git
