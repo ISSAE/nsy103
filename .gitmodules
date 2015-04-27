@@ -40,3 +40,6 @@
 [submodule "ZiadBassil"]
 	path = ZiadBassil
 	url = https://github.com/ziadbassila/nsy103-ziad.git
+[submodule "AhmadTout"]
+	path = AhmadTout
+	url = https://github.com/ahmadtout/Project.git
