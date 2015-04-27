@@ -37,3 +37,6 @@
 [submodule "MariamBS"]
 	path = MariamBS
 	url = https://github.com/mariambs/chat.git
+[submodule "ZiadBassil"]
+	path = ZiadBassil
+	url = https://github.com/ziadbassila/nsy103-ziad.git
