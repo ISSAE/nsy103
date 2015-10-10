@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# un commentaire
+echo "Hello tous ..."
+ls
+
+x=titi
+
+echo $x
+
+echo "$x > $(date)"

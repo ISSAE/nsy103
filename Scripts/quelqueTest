@@ -1,0 +1,17 @@
+#!/bin/bash
+if test -r $1
+then
+	echo $1 est readable
+fi
+if test -w $1
+then
+	echo $1 est writable
+fi
+if test -x $1
+then
+	echo $1 est executable
+fi
+if test -d $1
+then
+	echo $1 est un repertoire
+fi
