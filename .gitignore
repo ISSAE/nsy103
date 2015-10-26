@@ -1,4 +1,6 @@
 *~
-/wrsokDL/dist/
-/wrsokDL/build/
-/minichat/dist/
+*.o
+a.out
+o/
+dist/
+build/

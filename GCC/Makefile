@@ -1,18 +1,15 @@
-premierPgm.i: premierPgm.c
-	gcc -E $< -o $@
+useDouble.c: useDoubleAdd.c
+	cp useDoubleAdd.c useDouble.c
 
+useDouble.o: useDouble.c afficheA.h
+	gcc -c useDouble.c -o useDouble.o
 
-%o: %.c
-	echo "From $@ to $< ?" 
-
-%.i: %.c
-	gcc -E $< -o $@
-
-%.s: %.i
-	gcc -S $< -o $@
-
-%.o: %.s
+%.o: %.c
+	echo "From $@ to $< ?"
 	gcc -c $< -o $@
 
+monpremierpgm: afficheA.o useDouble.o
+	gcc afficheA.o useDouble.o -o monpremierpgm
+
 clean:
-	rm *.o *.s *.i
+	rm *.o monpremierpgm
