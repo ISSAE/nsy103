@@ -4,3 +4,9 @@ struct _point {
     int y;
 };
 
+typedef struct _point Point;
+
+typedef struct _vecteur {
+  int x;
+  int y;
+} Vecteur;

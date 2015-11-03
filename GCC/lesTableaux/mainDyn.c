@@ -9,8 +9,10 @@
 #include <stdlib.h>
 int main(int argc, char** argv) {
     /* declaration d'un tableaux (statique) */
-    int T[1000]; /* tableaux de 10 entiers de T[0] à T[9] */
+    int *T; /* tableaux de 10 entiers de T[0] à T[9] */
     int i;
+
+    T = malloc(10*sizeof(int));
     /* remplir le tableaux */
     for (i=0; i< 10; i++) {
            T[i]=i;
@@ -29,15 +31,7 @@ int main(int argc, char** argv) {
            printf("*(T+%d)=%d\n",i,*(T+i));
     }
 
-    /* Que se passe t'il si on va plus loin que 10? */
+  
 
-    while (1) {
-          /* UNe boucle infinie */
-         //printf("T[%d]=%d\n",i,T[i]);
-          printf("i=%d\n",i);
-          i++;
-   }
-
-    return (EXIT_SUCCESS);
-}
+   
 

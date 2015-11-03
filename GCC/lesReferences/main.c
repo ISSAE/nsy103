@@ -20,8 +20,8 @@ int main(int argc, char** argv) {
     int x=10;
     /* Une variables x est pacée en MC à une certaine adresse mémoire */
     /* En C on peut récupéré cette adresse grace à l'opérateur &*/
-    printf("Une variables est placée en MC à une certaine adresse mémoire\nEn C on peut récupéré cette adresse grace à l'opérateur &");
-    printf("La variable x est à l'adresse %p et a la valeur %d\n", &x,x);
+    printf("Une variables est placée en MC à une certaine adresse mémoire\nEn C on peut récupéré cette adresse grace à l'opérateur &\n");
+    printf("1-La variable x est à l'adresse %p et a la valeur %d\n", &x,x);
     
     /* On peut affecter aussi les adresses dans des variables */
     
@@ -29,11 +29,11 @@ int main(int argc, char** argv) {
     
     p = &x;
     
-    printf("La variable x est à l'adresse %p et a la valeur %d\n", p,x);
+    printf("2-La variable x est à l'adresse %p et a la valeur %d\n", p,x);
     
     /* a partir d'une adresse on peut aussi acceder a la valeur de la case mémoire operateur * */
     
-    printf("La mémoire à l'adresse %p a la valeur %d\n", p, *p);
+    printf("3-La mémoire à l'adresse %p a la valeur %d\n", p, *p);
     
     /* Affectation de valeur par référnece au nom de l variable*/
     x=100;
