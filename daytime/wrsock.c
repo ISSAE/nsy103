@@ -70,6 +70,7 @@ int reads(int sock, char *pbuf, int noc) {
     while (nreste > 0) {
         nlit = read(sock, pbuf, nreste);
         if (nlit < 0) return (nlit);
+        if (nlit == 0) return (noc - nreste);
         nreste -= nlit;
         pbuf += nlit;
     }

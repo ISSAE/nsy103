@@ -1,11 +1,12 @@
 /*
- * daytimetcpsrv.c#include <unistd.h>
+ *   Day time tcp serv
  *
  *  Created on: 2 avr. 2011
  *  modified : 28/11/2015 : bug
  *  modified : 30/11/2015 : utilisation d'utilitaire wrsock et traitement
  *  Author: Pascal Fares
  *  Pour nsy103
+ *  utiliser en faisant par exemple "telnet localhost 2013"
  */
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -33,6 +34,10 @@ int main(int argc, char **argv) {
     
     /* Céer la socket  d'ecoute sur le port 2013 machine ANY*/
     listenfd = bindedSocket(0, SOCK_STREAM, 2013);
+    if (listenfd < 0) {
+        perror ("Dans bindedSocket");
+        exit(1);
+    }
     listen(listenfd, 5);
     for (;;) {
         connfd = accept(listenfd, (struct sockaddr *) &clientaddr, &clen);       
