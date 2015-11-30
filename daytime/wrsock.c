@@ -89,14 +89,15 @@ int reads(int sock, char *pbuf, int noc) {
 /*****************************************************************/
 
 
-struct sockaddr_in *CreerSockAddr(char *name, int port) {
+struct sockaddr_in *creerSockAddr(char *name, int port) {
     //Création de la structure socketaddr : new
     struct sockaddr_in *adsock = (struct sockaddr_in *)
             malloc(sizeof (struct sockaddr_in));
 
     struct hostent *haddr = NULL;
-    char *str;
+    
 #ifdef DEBUG
+    char *str;
     printf("IN CreerSockAddr %s,%d\n", name, port);
 #endif
     bzero(adsock, sizeof (struct sockaddr_in));
@@ -131,28 +132,27 @@ struct sockaddr_in *CreerSockAddr(char *name, int port) {
  * Par nom:numport                                                 
  * INPUT:
  *  IN nom : nom DNS de l'adresse
+ *  IN type : type (UDP = SOCK_DGRAM ou TCP = SOCK_STREAM)
  *  IN numport : le numéro de port pour l'écoute UDP
  * ======================================================================
  */
 
-int bindedSocket(char *nom, int numport) {
-    int sock;
-    //int r=1;
-    /* adsock : adresse de la socket d'écoute */
+int bindedSocket(char *nom, int type, int numport) {
+    int sock=-1;
+    
+    /* adsock : L'adresse pour l'association (binding) IP:port */
     struct sockaddr_in *adsock = (struct sockaddr_in *)
-            CreerSockAddr(nom, numport);
+            creerSockAddr(nom, numport);
 
-    if ((sock = socket(AF_INET, SOCK_DGRAM, 0)) <= 0) {
+    if ((sock = socket(AF_INET, type, 0)) <= 0) {
         perror("\n pb creation socket \n");
     }
-    /*	sock=dup(sock);
-          setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &r, sizeof(r));
-     */
 #ifdef DEBUG
     printf("La socket num %d\n", sock);
 #endif
     if (bind(sock, (struct sockaddr *) adsock, sizeof (*adsock)) < 0) {
-        perror("\n pb bind");
+        perror("\n pb de bind");
+        sock=-2;
     }
     return (sock);
 }

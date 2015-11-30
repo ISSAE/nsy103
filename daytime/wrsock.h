@@ -10,8 +10,7 @@
 
 int writes(int, char *, int);
 int reads(int, char *, int);
-struct sockaddr_in *CreerSockAddr(char *, int);
-int SockUdp(char *, int);
-
+int bindedSocket(char *, int, int);
+struct sockaddr_in *creerSockAddr(char *, int);
 #endif	/* WRSOCK_H */
 
