@@ -43,3 +43,6 @@
 [submodule "AdelYounes"]
 	path = Auditeurs2015/AdelYounes
 	url = https://github.com/adelyounes/ChatApplicationNSY103
+[submodule "autresExemples/socketsExamples"]
+	path = autresExemples/socketsExamples
+	url = git@github.com:floslm/miniirc.git
