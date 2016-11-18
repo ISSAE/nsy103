@@ -1,11 +1,14 @@
 all: serv cli
 
-serv: o/wrsock.o o/server.o
-	    gcc -o dist/serv o/wrsock.o o/server.o
+serv: o/traitement.o o/wrsock.o o/server.o
+	    gcc -o dist/serv o/traitement.o o/wrsock.o o/server.o
 	
 cli: o/wrsock.o o/client.o
 	gcc -o dist/cli o/wrsock.o o/client.o
 	
+o/traitement.o: traitement.c traitement.h
+	gcc -o o/traitement.o -c -Wall traitement.c
+
 o/wrsock.o: wrsock.c wrsock.h
 	gcc -o o/wrsock.o -c -Wall wrsock.c
 	
