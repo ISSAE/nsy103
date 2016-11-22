@@ -4,12 +4,6 @@
 [submodule "Ibrahim-0507"]
 	path = Auditeurs2015/Ibrahim-0507
 	url = git@github.com:Ibrahim-0507/Linux_minichat.git
-[submodule "RaghebGhandour"]
-	path = Auditeurs2015/RaghebGhandour
-	url = https://bitbucket.org/f0unix/linuxchat.git
-[submodule "PeterOo"]
-	path = Auditeurs2015/PeterOo
-	url = git@github.com:peter0o/linuxChat.git
 [submodule "AbedHabboubTCP"]
 	path = Auditeurs2015/AbedHabboubTCP
 	url = git@github.com:AbedHabboub/MiniChatTCP.git
@@ -19,21 +13,6 @@
 [submodule "NehmatSlim"]
 	path = Auditeurs2015/NehmatSlim
 	url = git@github.com:ns7900f/linux.git
-[submodule "MohamadDakdouki"]
-	path = Auditeurs2015/MohamadDakdouki
-	url = git@github.com:skynete10/chat.git
-[submodule "NehmatHallal"]
-	path = Auditeurs2015/NehmatHallal
-	url = git@github.com:nehmat2015/minichat_tcp.git
-[submodule "MohamadMohaidly"]
-	path = Auditeurs2015/MohamadMohaidly
-	url = git@github.com:mohammadmoahidly/TalkProject.git
-[submodule "SafaHjeij"]
-	path = Auditeurs2015/SafaHjeij
-	url = https://github.com/safaahjj/projet_chat_linux.git
-[submodule "MariamBS"]
-	path = Auditeurs2015/MariamBS
-	url = https://github.com/mariambs/chat.git
 [submodule "ZiadBassil"]
 	path = Auditeurs2015/ZiadBassil
 	url = https://github.com/ziadbassila/nsy103-ziad.git
@@ -43,6 +22,3 @@
 [submodule "AdelYounes"]
 	path = Auditeurs2015/AdelYounes
 	url = https://github.com/adelyounes/ChatApplicationNSY103
-[submodule "autresExemples/socketsExamples"]
-	path = autresExemples/socketsExamples
-	url = git@github.com:floslm/miniirc.git
