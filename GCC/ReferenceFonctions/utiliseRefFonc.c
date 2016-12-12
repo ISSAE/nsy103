@@ -7,12 +7,18 @@
 int main(int argc, char**argv, char**env){
     int x,y;
     if (argc!=4) {
-        printf("Pour utiliser le programme faire :\n ./lance <nomfonction> <param1> <param2>\n");
+        printf("Pour utiliser le programme faire :\n "
+                "./lance <nomfonction> <param1> <param2>\n");
+        exit(1);
     }
-    //Si on est ici donc argc==4 argv[1] : nom de la fonction argv[2] et argv[3] les paramètres]
-    //Récupération d'un  entier depuis une chaine de caractère : solution 1
+    /* Si on est ici à cause du exit(1) .... 
+     * nécessairement... argc==4 
+     * argv[1] : nom de la fonction, argv[2] et argv[3] les paramètres
+     */
+    
+    //Récupération d'un  entier depuis une chaine de caractère : solution 1 atoi
     x=atoi(argv[2]);
-    //Récupération d'un  entier depuis une chaine de caractère : solution 2
+    //Récupération d'un  entier depuis une chaine de caractère : solution 2 sscanf
     sscanf(argv[3], "%d", &y);
 #ifdef DEBUG
     printf("x=%d,y=%d\n",x,y);
