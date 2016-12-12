@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
     
     /* On peut affecter aussi les adresses dans des variables */
     
-    int* p; /* p est de type adresse ou pointeur */
+    int* p; /* p est de type adresse ou pointeur : une référence*/
     
     p = &x;
     
