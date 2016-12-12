@@ -1,12 +1,15 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 int main (int argc, char *argv[], char **env){
     
     char **myargv;
     int i;
-    int pid;
+    int pid,pidended;
+    int status;
 
     /**
     myargv=(char **)malloc(argc * sizeof(char *));
@@ -27,9 +30,12 @@ int main (int argc, char *argv[], char **env){
         printf("chez le fils... avant execvp %d", getpid());
         execvp (argv[1], argv+1);
         perror("\n--------------si ici pas OK---\n");
+        exit(1);
     }
     /** attendre la fin du fils */
-    wait();
+    
+    pidended=wait(&status);
+    printf("le fils %d est terminé son status est %d\n",pidended,status);
 
  /** UNIQUEMENT POUR COMPARER, sinon inutile pour l'exercice en lui même 
   * constater la différence entre execv et execvp
