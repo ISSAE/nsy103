@@ -5,7 +5,7 @@
 
 int applyF(int (*f)(int, int), int x, int y){
 #ifdef DEBUG
-    printf("Appel de applyF avec %02lx %d %d\d",(uintptr_t) f,x,y);
+    printf("Appel de applyF avec %02lx %d %d\n",(uintptr_t) f,x,y);
 #endif
     return f(x,y);
 }

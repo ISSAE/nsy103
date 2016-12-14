@@ -10,7 +10,7 @@ int main() {
     p = fork();
 
     //Combien de fois ce prinf sera executé? pourquoi?
-    printf ("p = %d : Je suis %d mon père est %d\n", p, getpid(), getppid());
+    printf("p = %d : Je suis %d mon père est %d\n", p, getpid(), getppid());
 
     if (p == 0) {
         printf("Je suis le fils : Je suis %d mon père est %d\n", getpid(), getppid());

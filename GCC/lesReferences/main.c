@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
     /* Affectation de valeur par référnece au nom de l variable*/
     x=100;
     
-    printf("valeur x=%d, adresse x=%p\n",x,p);
+    printf("valeur x=%d, adresse x=%p\n",*p,p);
     
     /* Affectation de valeur par référnece à l'adresse de l variable*/
     

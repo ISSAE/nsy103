@@ -1,13 +1,11 @@
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
 
-	#include <fcntl.h>
-	#include <stdio.h>
-	#include <stdlib.h>
-	#include <unistd.h>
-	#include <errno.h>
-
-	int
-main (int argc, char * argv [])
-{
+int
+main (int argc, char * argv []) {
 	int fd;
 
 	char * nv_argv [] = { "./exemple_execvp", NULL };

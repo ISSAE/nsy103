@@ -6,6 +6,7 @@
 
 int main(int argc, char**argv, char**env){
     int x,y;
+    int res;
     if (argc!=4) {
         printf("Pour utiliser le programme faire :\n "
                 "./lance <nomfonction> <param1> <param2>\n");
@@ -19,8 +20,13 @@ int main(int argc, char**argv, char**env){
     //Récupération d'un  entier depuis une chaine de caractère : solution 1 atoi
     x=atoi(argv[2]);
     //Récupération d'un  entier depuis une chaine de caractère : solution 2 sscanf
-    sscanf(argv[3], "%d", &y);
+    res=sscanf(argv[3], "%d", &y); 
+    if (res == 0) {
+        printf("Le paramètre n'est pas un  nombre");
+        exit(1);
+    }
 #ifdef DEBUG
+    printf("Résulat du sscanf %d\n", res);
     printf("x=%d,y=%d\n",x,y);
 #endif
     if (strcmp(argv[1],"add")==0) {

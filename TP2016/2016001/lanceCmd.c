@@ -39,7 +39,7 @@ int main (int argc, char *argv[], char **env){
 
  /** UNIQUEMENT POUR COMPARER, sinon inutile pour l'exercice en lui même 
   * constater la différence entre execv et execvp
-  * execvp comme bash recharche le programme en tenant compte du path
+  * execvp comme bash recherche le programme en tenant compte du path
   * execv 
   */
     printf("\n%d mon fils est %d\n", getpid(),pid);
