@@ -1,1 +1,2 @@
-v=100
+direct : v=10
+après dup : v=10

@@ -1,5 +1,0 @@
-#! /bin/sh
-echo faux ls
-echo qui lance un shell
-sh
-

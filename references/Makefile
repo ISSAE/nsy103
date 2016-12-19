@@ -9,4 +9,4 @@ premier.o: premier.c premier.h
 	gcc -c premier.c
 
 clean:
-	rm *.o
+	@rm *.o monpremier
