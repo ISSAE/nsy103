@@ -28,9 +28,10 @@ int main(int argc, char **argv) {
     struct sockaddr_in clientaddr;
     unsigned int clen;
     /* pour la date */
-    char buff[80];
+    char buff[2049];
     int tdate;
     time_t ticks;
+    int fd;
     
     /* Céer la socket  d'ecoute sur le port 2013 machine ANY*/
     listenfd = bindedSocket(0, SOCK_STREAM, 2013);
@@ -49,11 +50,20 @@ int main(int argc, char **argv) {
         inet_ntop(AF_INET, &(clientaddr.sin_addr), cliIP, INET_ADDRSTRLEN);
         printf("Le client est %s:%d \n", cliIP, clientaddr.sin_port);
         
-        /* répérer la date courante*/
-        ticks = time(NULL);
-        tdate = date(buff, sizeof (buff), &ticks);
-        /* transmetre la date vers la socket en d'autres termes vers le clients*/
-        write(connfd, buff, tdate);
+        //TODO lire depuis le client le nom du fichier
+        clen=read(connfd,buff,2048);
+        buff[clen]=0;
+        printf("Le fichier a lire est %s", buff);
+
+        //TODO lire le fichier et lénvoyer au client
+        //suposons que le fichier est petit
+        fd = open(buff, O_RDONLY);
+        if (fd <0) {
+            perror("open");
+            close(connfd);
+        }
+        clen=read(fd, buff, 2048);
+        write(connfd, buff, clen);
         close(connfd);
     }
 }

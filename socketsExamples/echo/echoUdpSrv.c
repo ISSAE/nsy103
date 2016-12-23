@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
     struct sockaddr_in servaddr, cliaddr;
 
     if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
-        printf("Erreur création socket\n");
+        perror("Erreur création socket");
         exit(1);
     }
     printf("Socket UDP créé.\n");

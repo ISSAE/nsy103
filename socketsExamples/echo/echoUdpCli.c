@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
             perror("ERREUR DANS SENDTO");
 
         }
-       if ((recvfrom(sockfd, buff, sizeof (buff), 0, (struct sockaddr *) cliaddr, &len)) < 0) {
+       if ((recvfrom(sockfd, buff, sizeof (buff), 0, (struct sockaddr *) &serv, &len)) < 0) {
             perror("ERROR IN RECVFROM");
             exit(0);
         }

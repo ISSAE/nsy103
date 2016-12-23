@@ -49,9 +49,9 @@ main(int argc, char *argv[]) {
             /* le port depuis l'argument */
             //sscanf(argv[1], "%d", &portnumber);
             if (sscanf(argv[1], "%d", &portnumber) == 0)
-                exit(2);
+                return 2;
             if (!((portnumber > 0) && (portnumber < 65535)))
-                exit(3);
+                return 3;
             break;
         default:
             printf("%s", usage);

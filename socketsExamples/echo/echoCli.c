@@ -25,13 +25,15 @@ int main(int argc, char **argv) {
 
     connect(sockfd, (struct sockaddr *) &servaddr, sizeof (servaddr));
 
-    while (1) {
-        bzero(sendline, 100);
-        bzero(recvline, 100);
+    do {
+        //bzero(sendline, 100);
+        //bzero(recvline, 100);
         taille = read(0, sendline, 100); /*stdin = 0 , Entree standard */
+        sendline[taille]=0;
         write(sockfd, sendline, taille + 1); /* +1 pour transmettre un 0 de fin de chaine*/
-        read(sockfd, recvline, 100);
+        taille=read(sockfd, recvline, 100);
+        recvline[taille]=0;
         printf("Nous avons reçu %s", recvline);
-    }
+    } while (recvline[0]!='.');
 
 }

@@ -28,11 +28,11 @@ int main() {
 
     comm_fd = accept(listen_fd, (struct sockaddr*) NULL, NULL);
 
-    while (1) {
+    do {
         bzero(str, 100);
         read(comm_fd, str, 100);
         printf("Le serveur reçoit - %s", str);
         write(comm_fd, str, strlen(str) + 1);
 
-    }
+    } while (str[0]!='.');
 }

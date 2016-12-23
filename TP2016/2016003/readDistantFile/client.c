@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
     /*pour l'adresse ip du serveur*/
     struct sockaddr_in *srvaddr;
     /* taille de la reponse */
-    char buff[80];
+    char buff[2049];
     int slen;
     
 
@@ -29,10 +29,14 @@ int main(int argc, char **argv) {
     if (connect(sockfd, (const struct sockaddr *) srvaddr, sizeof(*srvaddr)) < 0) {
         perror("Dasn connect ");
     }
-    slen = reads(sockfd, buff, 80);
+
+    //TODO envoyer le nom du fochier a lire a distance (chez le serveur)
+    write(sockfd,argv[3],strlen(argv[3]));
+    //TODO lire le contenue du fichier complet
+    //Supposons qu'un seul read suffit
+    slen=read(sockfd,buff,2048);
     buff[slen]=0;
-    //write(1,buff,slen);
-    printf("%s\n", buff);
+    write(1,buff,slen+1);
     close(sockfd);
   
 }

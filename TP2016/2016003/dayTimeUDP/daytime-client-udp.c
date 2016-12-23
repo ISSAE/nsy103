@@ -88,7 +88,7 @@ main(int argc, char *argv[]) {
     }
 
     /* recevoir la réponse. il y a quelquechose a lire*/
-    if ((numbytes = recvfrom(sfd, buf, (int) sizeof (buf), 0, (struct sockaddr *) &server_addr, &addr_len)) < 0) {
+    if ((numbytes = recvfrom(sfd, buf, (int) sizeof (buf), MSG_DONTWAIT, (struct sockaddr *) &server_addr, &addr_len)) < 0) {
         perror("recvfrom");
         close(sfd);
         exit(7);
