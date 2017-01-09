@@ -1,13 +1,16 @@
-all: echoSrv echoCli
+all: echoSrv echoSrvThread echoCli
 
-echoSrv: echoSrv.c wrsock.o
-	gcc -o $@ echoSrv.c wrsock.o
+echoSrvThread: echoSrvThread.c serviceEcho.c wrsock.o
+	gcc -Wall -o $@ echoSrv.c serviceEcho.c wrsock.o -lpthread
+
+echoSrv: echoSrv.c serviceEcho.c wrsock.o
+	gcc -Wall -o $@ echoSrv.c serviceEcho.c wrsock.o -lpthread
 
 echoCli: echoCli.c wrsock.o
-	gcc -o $@ echoCli.c wrsock.o
+	gcc -Wall -o $@ echoCli.c wrsock.o
 
 wrsock.o: ../lib/wrsock.c ../lib/wrsock.h 
-	gcc -c $<
+	gcc -Wall -c $<
 
 clean:
 	rm wrsock.o echoCli echoSrv

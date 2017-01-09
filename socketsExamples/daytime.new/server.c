@@ -17,12 +17,12 @@
 #include <stdio.h>
 #include <arpa/inet.h>
 #include <stdlib.h>
-#include "wrsock.h"
+#include "../lib/wrsock.h"
 #include "traitement.h"
 
 int main(int argc, char **argv) {
     int listenfd, connfd;
-    
+
     /*pour l'adresse ip du client*/
     char cliIP[INET_ADDRSTRLEN];
     struct sockaddr_in clientaddr;
@@ -31,27 +31,30 @@ int main(int argc, char **argv) {
     char buff[80];
     int tdate;
     time_t ticks;
-    
+
     /* Céer la socket  d'ecoute sur le port 2013 machine ANY*/
     listenfd = bindedSocket(0, argv[1], SOCK_STREAM);
     if (listenfd < 0) {
-        perror ("Dans bindedSocket");
+        perror("Dans bindedSocket");
         exit(1);
     }
-    if (listen(listenfd, 5)<0) {
+    if (listen(listenfd, 5) < 0) {
         perror("listen");
         exit(2);
-    } 
+    }
     for (;;) {
-        connfd = accept(listenfd, (struct sockaddr *) &clientaddr, &clen);       
+        connfd = accept(listenfd, (struct sockaddr *) &clientaddr, &clen);
         if (connfd < 0) {
             perror("Erreur Dans accept ");
             exit(3);
         }
         /* Pour information : l'adresse du client qui nous a contaté */
+        /* OLD */
         inet_ntop(AF_INET, &(clientaddr.sin_addr), cliIP, INET_ADDRSTRLEN);
         printf("Le client est %s:%d \n", cliIP, clientaddr.sin_port);
         
+        //NEW
+        printf("Le client est %s\n",getNameInfo(&clientaddr));
         /* répérer la date courante*/
         ticks = time(NULL);
         tdate = date(buff, sizeof (buff), &ticks);

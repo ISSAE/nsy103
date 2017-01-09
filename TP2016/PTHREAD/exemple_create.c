@@ -40,8 +40,8 @@ main(void) {
 void *
 fn_thread(void * num) {
     int numero = (int) num;
-    while (compteur < 40) {
-        usleep(numero * 100000);
+    while (1) {
+        usleep(numero * 10);
         compteur++;
         fprintf(stdout, "Thread %d : compteur = %d\n",
                 numero, compteur);

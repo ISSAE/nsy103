@@ -8,13 +8,18 @@
 #include "../lib/wrsock.h"
 
 int main(int argc, char **argv) {
-    int sockfd, n;
+    int sockfd;
     char sendline[100];
     char recvline[100];
     int taille;
     struct sockaddr_in *servaddr;
-
-    servaddr=creerSock(argv[1],argv[2],SOCK_STREAM,&sockfd);
+    if (argc==1){
+        servaddr=creerSock("127.0.0.1","2023",SOCK_STREAM,&sockfd);
+    } else if (argc==2) {
+        servaddr=creerSock(argv[1],"2023",SOCK_STREAM,&sockfd);
+    } else {
+        servaddr=creerSock(argv[1],argv[2],SOCK_STREAM,&sockfd);
+    }
 
     connect(sockfd, (struct sockaddr *) servaddr, sizeof (struct sockaddr_in));
 

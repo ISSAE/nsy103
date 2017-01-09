@@ -12,7 +12,6 @@
 int writes(int, char *, int);
 int reads(int, char *, int);
 struct addrinfo *getAddrInfo(const char *, const char *, int);
-char* getNameInfo(struct sockaddr_in *sa);
 struct sockaddr_in *creerSock(char *, char *, int, int *);
 int bindedSocket(char *, char *, int);
 struct sockaddr_in *creerSockAddr(char *, char *, int);

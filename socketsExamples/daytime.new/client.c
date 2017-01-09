@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <arpa/inet.h>
 #include <stdlib.h>
-#include "wrsock.h"
+#include "../lib/wrsock.h"
 #include "traitement.h"
 
 int main(int argc, char **argv) {

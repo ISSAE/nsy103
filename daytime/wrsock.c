@@ -80,7 +80,7 @@ int reads(int sock, char *pbuf, int noc) {
  */
 struct addrinfo *getAddrInfo(const char *nom, const char *service, int type) {
     struct addrinfo hints;
-    struct addrinfo *result;
+    struct addrinfo *result, *rp;
     int s;
     memset(&hints, 0, sizeof (struct addrinfo));
     //hints.ai_family = AF_UNSPEC; * Allow IPv4 or IPv6 
@@ -101,28 +101,6 @@ struct addrinfo *getAddrInfo(const char *nom, const char *service, int type) {
 
     //revoyer l'information adresse  qui correspond
     return result;
-
-}
-
-/**
- * 
- * @param sa : socket address
- * @return host:port
- */
-char* getNameInfo(struct sockaddr_in *sa) {
-    char hbuf[NI_MAXHOST], sbuf[NI_MAXSERV];
-    char *resbuff;
-
-    if (getnameinfo((struct sockaddr *)sa, sizeof(struct sockaddr_in), hbuf, sizeof (hbuf), sbuf,
-            sizeof (sbuf), NI_NOFQDN | NI_NUMERICHOST | NI_NUMERICSERV) == 0) {
-        resbuff = malloc(NI_MAXHOST + NI_MAXSERV + 2);
-        sprintf(resbuff, "ADDRESS %s:%s", hbuf, sbuf);
-    }
-    else {
-        perror("getnameinfo");
-        resbuff = NULL;
-    }
-    return resbuff;
 
 }
 
@@ -181,7 +159,7 @@ struct sockaddr_in *creerSock(char *name, char *port, int type, int *sockId) {
 
 int bindedSocket(char *nom, char* service, int type) {
     int sock = -1;
-    int yes = 1;
+    int yes=1;
     struct addrinfo *rp;
     rp = getAddrInfo(nom, service, type);
 
@@ -190,7 +168,7 @@ int bindedSocket(char *nom, char* service, int type) {
             rp->ai_protocol)) <= 0) {
         perror("\n pb creation socket \n");
     }
-    setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof yes);
+    setsockopt(sock,SOL_SOCKET,SO_REUSEADDR,&yes,sizeof yes);
 #ifdef DEBUG
     printf("La socket num %d\n", sock);
 #endif

@@ -11,13 +11,12 @@
 #include "serviceEcho.h"
 #include <pthread.h>
 #include <stdint.h>
-#include <sys/wait.h>
 
 int main(int argc, char **argv) {
 
     //char str[100];
     int listen_fd, comm_fd;
-    int status,pid;
+    pthread_t tid;
     
     if (argc==1) {
         listen_fd = bindedSocket(NULL, "2023", SOCK_STREAM);
@@ -35,12 +34,7 @@ int main(int argc, char **argv) {
             exit(2);
         }
         
-        if (fork() ==0) {
-            printf("un service fils pid=%d père=%d\n",getpid(), getppid());
-            //Le fils fait le service et se termine
-            service((void *)(intptr_t)comm_fd);
-            exit(0);
-        } 
+        pthread_create(&tid, NULL, service, (void *)(intptr_t)comm_fd);
     }
     close(listen_fd);
 }
