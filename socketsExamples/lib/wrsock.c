@@ -104,6 +104,19 @@ struct addrinfo *getAddrInfo(const char *nom, const char *service, int type) {
 
 }
 
+char* getNameInfo(struct sockaddr_in *sa) {
+    char hbuf[NI_MAXHOST], sbuf[NI_MAXSERV];
+    char *resbuff;
+
+    if (getnameinfo(sa, len, hbuf, sizeof (hbuf), sbuf,
+            sizeof (sbuf), NI_NUMERICHOST | NI_NUMERICSERV) == 0) {
+        resbuff = malloc(NI_MAXHOST + NI_MAXSERV + 2);
+        sprintf(resbuff, "%s:%s", hbuf, sbuf);
+    }
+    else resbuff = null;
+
+}
+
 /****************************************************************
  * Fonction pour la creation d'une adresse (service) pour la     
  * Communication par socket                                      
@@ -159,7 +172,7 @@ struct sockaddr_in *creerSock(char *name, char *port, int type, int *sockId) {
 
 int bindedSocket(char *nom, char* service, int type) {
     int sock = -1;
-    int yes=1;
+    int yes = 1;
     struct addrinfo *rp;
     rp = getAddrInfo(nom, service, type);
 
@@ -168,7 +181,7 @@ int bindedSocket(char *nom, char* service, int type) {
             rp->ai_protocol)) <= 0) {
         perror("\n pb creation socket \n");
     }
-    setsockopt(sock,SOL_SOCKET,SO_REUSEADDR,&yes,sizeof yes);
+    setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof yes);
 #ifdef DEBUG
     printf("La socket num %d\n", sock);
 #endif

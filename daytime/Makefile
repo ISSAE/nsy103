@@ -19,5 +19,5 @@ o/server.o: server.c wrsock.h
 	gcc -o o/server.o -c -Wall server.c
 	
 clean:
-	rm o/* dist/*
+	@rm o/* dist/* serv cli a.out 2> /dev/null || true
 	
