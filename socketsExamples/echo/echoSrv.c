@@ -6,23 +6,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include "../lib/wrsock.h"
 
-int main() {
+int main(int argc, char **argv) {
 
     char str[100];
     int listen_fd, comm_fd;
 
-    struct sockaddr_in servaddr;
-
-    listen_fd = socket(AF_INET, SOCK_STREAM, 0);
-
-    bzero(&servaddr, sizeof (servaddr));
-
-    servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = htons(INADDR_ANY);
-    servaddr.sin_port = htons(22000);
-
-    bind(listen_fd, (struct sockaddr *) &servaddr, sizeof (servaddr));
+    listen_fd = bindedSocket(NULL, argv[1], SOCK_STREAM);
 
     listen(listen_fd, 10);
 
@@ -35,4 +26,6 @@ int main() {
         write(comm_fd, str, strlen(str) + 1);
 
     } while (str[0]!='.');
+    close(comm_fd);
+    close(listen_fd);
 }

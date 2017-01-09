@@ -125,7 +125,31 @@ struct sockaddr_in *creerSockAddr(char *name, char *port, int type) {
     struct addrinfo *res;
     res = getAddrInfo(name, port, type);
 
-    return ((struct sockaddr_in *)res->ai_addr);
+    return ((struct sockaddr_in *) res->ai_addr);
+}
+
+/**
+ * Socket non bindé avec adresse en résultat 
+ *
+ * Entree : name : nom de la machine
+ * port : numero de port pour le service
+ * type : socket 
+ * Sortie : 
+ * La fonction retourne(et alloue) un objet de type 
+ * struct sockaddr_in(internet adresse)
+ * reveie une socket dans socketId
+ */
+
+struct sockaddr_in *creerSock(char *name, char *port, int type, int *sockId) {
+    //Création de la structure socketaddr : new
+    struct addrinfo *res;
+    res = getAddrInfo(name, port, type);
+    if ((*sockId = socket(res->ai_family, res->ai_socktype,
+            res->ai_protocol)) <= 0) {
+        perror("\n pb creation socket \n");
+    }
+    //TODO copier avent de renvoyer et libérer res : freeaddrinfo(res); 
+    return ((struct sockaddr_in *) res->ai_addr);
 }
 
 /* ======================================================================
@@ -156,6 +180,7 @@ int bindedSocket(char *nom, char* service, int type) {
         perror("\n pb de bind");
         sock = -2;
     }
+    freeaddrinfo(rp);
     return (sock);
 }
 

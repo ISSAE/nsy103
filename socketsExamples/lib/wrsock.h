@@ -11,7 +11,9 @@
 
 int writes(int, char *, int);
 int reads(int, char *, int);
-int bindedSocket(char *, int, int);
-struct sockaddr_in *creerSockAddr(char *, int);
+struct addrinfo *getAddrInfo(const char *, const char *, int);
+struct sockaddr_in *creerSock(char *name, char *port, int type, int *sockId);
+int bindedSocket(char *, char *, int);
+struct sockaddr_in *creerSockAddr(char *, char *, int);
 #endif	/* WRSOCK_H */
 
