@@ -3,6 +3,7 @@
  * Author: pascalfares
  *
  * Created on 6 décembre 2014, 13:35
+ * Updated 9 janvier 2017 : utilisation de getaddrinfo
  */
 
 #ifndef WRSOCK_H

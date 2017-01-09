@@ -2,13 +2,6 @@
 /*
         $Id: wrsock.c,v 2.4 2000/07/06 09:53:04 pfares Exp $ 
         $Log: wrsock.c,v $
-        Revision 2.4  2000/07/06 09:53:04  pfares
-        commentaires
-
-    
-        Revision 2.3  2000/07/05 21:35:02  root
-        commentaires pour le cours reseau B.
-
         Revision 2.2  2000/07/05 21:09:21  root
         Avant de demarrer test de ci co cvs
 
@@ -17,7 +10,10 @@
  *
  * Revision 1.1  1997/03/22  06:26:10  pascal
  * Initial revision
- * */
+ * 
+ * Updated 9 janvier 2017 : utilisation de getaddrinfo
+ * 
+ */
 #include <sys/types.h>          /* See NOTES */
 #include <sys/socket.h>
 #include <stdio.h>
@@ -37,7 +33,7 @@
 /*    Dans certains cas la primitive système write n'envoie pas   */
 /*    tous les actets demandés (elle retourne le nombre d'octets  */
 /*    rééllement emis). On relance alors l'émisson jusqua épuisement */
-/*    de tous les actets que l'on souhaite émettre                 */
+/*    de tous les octets que l'on souhaite émettre                 */
 /* Alogirithme:                                                    */
 /*    tanque il reste des octets à emettre                         */
 /*        Emmetre les octets restants                              */
@@ -76,6 +72,40 @@ int reads(int sock, char *pbuf, int noc) {
     }
     return (noc - nreste);
 }
+
+/****************************************************************
+ * recuperer une information adresse addrinfo: 
+ * cette adresse est prète pour socket et bind
+ * Entree: 
+ *  nom de host a chercher
+ *  service : nom de service ou numéro de port ou null
+ *  soktype : type de la socket  SOCK_STREAM ou SOCK_DGRAM
+ * Sortie:
+ *  adresse addrinfo
+ */
+struct addrinfo *getAddrInfo(const char *nom, const char *service, int type) {
+    struct addrinfo hints;
+    struct addrinfo *result, *rp;
+    int s;
+    memset(&hints, 0, sizeof (struct addrinfo));
+    //hints.ai_family = AF_UNSPEC; /* Allow IPv4 or IPv6 */
+    hints.ai_family = AF_INET; //Dans  notre cas seulement ipv4
+    hints.ai_socktype = type;
+    hints.ai_flags = AI_PASSIVE; /* For wildcard IP address */
+    hints.ai_protocol = 0; /* Any protocol */
+    hints.ai_canonname = NULL;
+    hints.ai_addr = NULL;
+    hints.ai_next = NULL;
+    s = getaddrinfo(nom, service, &hints, &result);
+    if (s != 0) {
+        perror("getaddrinfo");
+        return NULL;
+    }
+
+    //revoyer l'information adresse  qui correspond
+    return result;
+
+}
 /**/
 /*****************************************************************/
 /* Fonction pour la creation d'une adresse (service) pour la     */
@@ -90,42 +120,12 @@ int reads(int sock, char *pbuf, int noc) {
 /*****************************************************************/
 
 
-struct sockaddr_in *creerSockAddr(char *name, int port) {
+struct sockaddr_in *creerSockAddr(char *name, char *port, int type) {
     //Création de la structure socketaddr : new
-    struct sockaddr_in *adsock = (struct sockaddr_in *)
-            malloc(sizeof (struct sockaddr_in));
+    struct addrinfo *res;
+    res = getAddrInfo(name, port, type);
 
-    struct hostent *haddr = NULL;
-    
-#ifdef DEBUG
-    char *str;
-    printf("IN CreerSockAddr %s,%d\n", name, port);
-#endif
-    bzero(adsock, sizeof (struct sockaddr_in));
-    if (name) {
-        haddr = gethostbyname(name);
-        if (haddr <= 0) {
-            perror("Nom de machine inconnu");
-        } else {
-            //pptr = (struct in_addr **) haddr->h_addr_list;
-            memcpy(&(adsock->sin_addr), haddr->h_addr_list[0], haddr->h_length);
-            //memcpy(&adsock->sin_addr, *pptr, sizeof(struct in_addr));
-#ifdef DEBUG
-            char str[32];
-            inet_ntop(haddr->h_addrtype, haddr->h_addr_list[0], str, sizeof (str));
-            printf("%s", str);
-#endif
-        }
-    } else {
-        adsock->sin_addr.s_addr = INADDR_ANY;
-    }
-
-    adsock->sin_family = AF_INET;
-    adsock->sin_port = htons(port);
-#ifdef DEBUG
-    printf("fin\n");
-#endif
-    return (adsock);
+    return ((struct sockaddr_in *)res->ai_addr);
 }
 
 /* ======================================================================
@@ -138,22 +138,23 @@ struct sockaddr_in *creerSockAddr(char *name, int port) {
  * ======================================================================
  */
 
-int bindedSocket(char *nom, int type, int numport) {
-    int sock=-1;
-    
-    /* adsock : L'adresse pour l'association (binding) IP:port */
-    struct sockaddr_in *adsock = (struct sockaddr_in *)
-            creerSockAddr(nom, numport);
+int bindedSocket(char *nom, char* service, int type) {
+    int sock = -1;
 
-    if ((sock = socket(AF_INET, type, 0)) <= 0) {
+    struct addrinfo *rp;
+    rp = getAddrInfo(nom, service, type);
+
+
+    if ((sock = socket(rp->ai_family, rp->ai_socktype,
+            rp->ai_protocol)) <= 0) {
         perror("\n pb creation socket \n");
     }
 #ifdef DEBUG
     printf("La socket num %d\n", sock);
 #endif
-    if (bind(sock, (struct sockaddr *) adsock, sizeof (*adsock)) < 0) {
+    if (bind(sock, rp->ai_addr, rp->ai_addrlen) < 0) {
         perror("\n pb de bind");
-        sock=-2;
+        sock = -2;
     }
     return (sock);
 }
