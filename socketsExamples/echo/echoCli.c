@@ -28,5 +28,7 @@ int main(int argc, char **argv) {
         recvline[taille]=0;
         printf("Nous avons reçu %s", recvline);
     } while (recvline[0]!='.');
+    
+    close (sockfd);
 
 }

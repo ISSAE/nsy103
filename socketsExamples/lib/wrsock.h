@@ -12,7 +12,7 @@
 int writes(int, char *, int);
 int reads(int, char *, int);
 struct addrinfo *getAddrInfo(const char *, const char *, int);
-struct sockaddr_in *creerSock(char *name, char *port, int type, int *sockId);
+struct sockaddr_in *creerSock(char *, char *, int, int *);
 int bindedSocket(char *, char *, int);
 struct sockaddr_in *creerSockAddr(char *, char *, int);
 #endif	/* WRSOCK_H */
