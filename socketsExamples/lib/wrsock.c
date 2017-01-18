@@ -15,7 +15,8 @@
 #include <stdlib.h>
 #include <netdb.h>
 #include <string.h>
-
+#include <netinet/in.h>
+#include <arpa/inet.h>
 /**
  * writes : Fonction pour l'ecriture en mode connecte sur un stream
  * INPUT:	                                                      
@@ -112,7 +113,7 @@ struct addrinfo *getAddrInfo(const char *nom, const char *service, int type) {
 char* getNameInfo(struct sockaddr_in *sa) {
     char hbuf[NI_MAXHOST], sbuf[NI_MAXSERV];
     char *resbuff;
-
+    //printf("%d , %s\n",ntohs(sa->sin_port), inet_ntoa(sa->sin_addr));
     if (getnameinfo((struct sockaddr *)sa, sizeof(struct sockaddr_in), hbuf, sizeof (hbuf), sbuf,
             sizeof (sbuf), NI_NOFQDN | NI_NUMERICHOST | NI_NUMERICSERV) == 0) {
         resbuff = malloc(NI_MAXHOST + NI_MAXSERV + 2);
@@ -179,7 +180,7 @@ struct sockaddr_in *creerSock(char *name, char *port, int type, int *sockId) {
  * IN numport : le numéro de port pour l'écoute UDP
  */
 
-int bindedSocket(char *nom, char* service, int type) {
+int bindedSocket(char *nom, char* service, int type, struct sockaddr_in *addrin) {
     int sock = -1;
     int yes = 1;
     struct addrinfo *rp;
@@ -197,6 +198,10 @@ int bindedSocket(char *nom, char* service, int type) {
     if (bind(sock, rp->ai_addr, rp->ai_addrlen) < 0) {
         perror("\n pb de bind");
         sock = -2;
+    }
+    if (addrin !=NULL) {
+         //On copie l'adresse
+         memcpy(addrin, rp->ai_addr, rp->ai_addrlen);
     }
     freeaddrinfo(rp);
     return (sock);
