@@ -12,6 +12,7 @@ int main () {
         char c;
         int res;
 	while(1) {
+            
     		res = scanf("%d",&x);
                 if (res==EOF) {
                    write(2,"Do nothing c'est ce n'est pas bon!",36);
