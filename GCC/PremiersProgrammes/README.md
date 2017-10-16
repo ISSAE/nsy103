@@ -10,6 +10,17 @@ Processus de compilation generation de programme en Linux avec GCC (Gnu C Compil
 
 ### un programme simple avec edition de lien par defaut
 
+
+> Pour compiler et générer un executable
+>
+> gcc -o <nomdevotrechoix> <Votre programme.c>
+>   
+> dans notre cas
+>
+> gcc -o pgm1 premierP.c
+>
+> si vous omettez -o gcc génère l'executable a.out
+
 ```bash
     $ gcc premierP.c
     $ gcc premierP.c 
