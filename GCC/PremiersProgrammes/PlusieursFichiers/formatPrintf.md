@@ -16,3 +16,4 @@
 | %Lg | long double | décimale avec la représentation la plus courte entre %lf et %le |
 | %c | unsigned char | caractère |
 | %s | char* | chaîne de caractères  |
+| %p | void* | L'argument pointeur, du type void * |
