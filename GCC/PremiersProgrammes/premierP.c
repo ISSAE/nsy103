@@ -10,7 +10,11 @@
  *  STDERR_FILENO   2       Standard error output.
  */
 
-main () {
+/**************/
+/* La fonction main point d'entré des programmes en C */
+/* main renvoie un code (nous verrons ceci plus tard) */
+
+int main () {
     write(STDOUT_FILENO, "bonjour la classe\n",18);
 }
 
