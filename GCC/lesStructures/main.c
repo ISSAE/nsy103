@@ -20,7 +20,7 @@ Point p;
 
  printf("(%d,%d)\n",p.x,p.y);
 
- struct _point * refp;
+ Point *refp;
 
  refp = malloc(sizeof(struct _point));
 

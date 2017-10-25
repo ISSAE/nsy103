@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
  a=10;
  b=20;
  printf("Avant : a=%d,b=%d\n",a,b);
- swap(a,b);
+ swap(&a,&b);
 
  printf("Après a=%d,b=%d fact(3)=%d code=%d\n",a,b,fact(3),EXIT_SUCCESS);
 

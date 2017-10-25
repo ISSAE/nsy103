@@ -10,6 +10,7 @@
 int main(int argc, char** argv) {
     /* declaration d'un tableaux (statique) */
     int *T; /* tableaux de 10 entiers de T[0] à T[9] */
+    int *tab;
     int i;
 
     T = malloc(10*sizeof(int));
@@ -31,6 +32,14 @@ int main(int argc, char** argv) {
            printf("*(T+%d)=%d\n",i,*(T+i));
     }
 
+
+    tab=T;
+    /* Afficher les éléments du tableaux notation t[] */
+    for (i=0; i< 10; i++) {
+           printf("tab[%d]=%d\n",i,tab[i]);
+    }
+    
+}
   
 
    
