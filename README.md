@@ -11,3 +11,7 @@ Vous touvez dans ce dépôt les exemples du cours NSY103 au Cnam Liban et certai
 
 * [Vos premiers pas](https://github.com/ISSAE/nsy103/tree/master/GCC/PremiersProgrammes)
 
+* [Les Références](GCC/lesReferences/)
+
+* [Les tablaux](https://github.com/ISSAE/nsy103/tree/master/GCC/lesTableaux)
+
