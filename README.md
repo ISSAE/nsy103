@@ -9,9 +9,12 @@ Vous touvez dans ce dépôt les exemples du cours NSY103 au Cnam Liban et certai
  
 ## Les sous répértoires corespondent aux différentes séances de TP (en présentiel ou en travail personel)
 
-* [Vos premiers pas](https://github.com/ISSAE/nsy103/tree/master/GCC/PremiersProgrammes)
+### Le langauage C et le compilateur gcc
 
+* [Vos premiers pas](GCC/PremiersProgrammes)
 * [Les Références](GCC/lesReferences/)
-
-* [Les tablaux](https://github.com/ISSAE/nsy103/tree/master/GCC/lesTableaux)
+* [Les tableaux](GCC/lesTableaux)
+* [Les Structures](GCC/lesStructures)
+* [Les Fonctions](GCC/lesFonctions)
+* [Les références de fonctions](GCC/ReferenceFonctions)
 
