@@ -1,0 +1,1 @@
+# Exemple tube Linux (pipe)
