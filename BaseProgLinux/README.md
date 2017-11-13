@@ -15,3 +15,5 @@ Un descripteur de fichier est un index d'une entrée dans le noyau-système, une
 Dans Linux, on appelle cette structure de données une table de descripteurs de fichier. Et chaque processus a sa propre table de descripteurs de fichier. L'application utilisateur passe la clé abstraite au noyau par un appel système et le noyau accèdera au fichier grâce à cette clé. L'application ne peut pas lire ou écrire directement la table des descripteurs de fichier.
 
 Les descripteurs de fichier peuvent désigner des fichiers, des répertoires, des devices bloc ou caractère (souvent appelés fichiers spéciaux), des pipes nommés ou des pipes anonymes, des sockets.
+
+![Descripteur de fichier](fd.gif "File Descriptor tables")
