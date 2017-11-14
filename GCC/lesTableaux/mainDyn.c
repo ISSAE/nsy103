@@ -14,6 +14,7 @@ int main(int argc, char** argv) {
     int i;
 
     T = malloc(10*sizeof(int));
+
     /* remplir le tableaux */
     for (i=0; i< 10; i++) {
            T[i]=i;
