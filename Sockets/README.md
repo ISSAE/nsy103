@@ -4,6 +4,7 @@
 
 * [Les primitives de l'API Socket](API/) et les studtures de données utilisés
 * [Exemples simples](Exemples/)
+* [Comment remplir la structure représentant des adresses](GetAddr/)
 
 ## Généralités
 
@@ -13,6 +14,8 @@ La fonction socket de cette API sert à créer un certain type de prise. Le type
 
 ### mode connecté
 
+Le mode connecté (comparable à une communication téléphonique), utilisant le protocole TCP. Dans ce mode de communication, une connexion durable est établie entre les deux processus, de telle façon que l’adresse de destination n’est pas nécessaire à chaque envoi de données.
+
 Une connexion est établie entre le client et le serveur en vue de permettre la communication. La fonction **connect** permet à un client de demander la connexion à un serveur, et la fonction **accept** permet à un serveur d'accepter cette connexion. Le programme serveur utilisera préalablement la fonction **listen** pour informer le logiciel sous-jacent qu'il est prêt à recevoir des connexions. Une fonction **close** permet de terminer la connexion. Lorsqu'un des deux interlocuteurs termine la connexion, l'autre est immédiatement avisé.
 
 Une fois la connexion établie, les fonctions standard du SGF, **write** et **read** servent respectivement à envoyer et à recevoir des informations. 
@@ -20,6 +23,8 @@ Une fois la connexion établie, les fonctions standard du SGF, **write** et **re
 Des fonctions auxiliaires **gethostbyname** et **getaddrinfo** permettent d'obtenir l'adresse IP d'une machine en interrogeant le DNS, adresse qui sera utilisée par d'autres fonctions de l'API.
 
 ### mode datagram
+
+Le mode non connecté (analogue à une communication par courrier), utilisant le protocole UDP. Ce mode nécessite l’adresse de destination à chaque envoi, et aucun accusé de réception n’est donné.
 
 En mode non connecté il n'y a pas de connection établit la socket est directement utilisé, les fonctions send et recv servent respectivement à envoyer et à recevoir des informations.
 
