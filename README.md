@@ -17,4 +17,6 @@ Vous touvez dans ce dépôt les exemples du cours NSY103 au Cnam Liban et certai
 * [Les Structures](GCC/lesStructures)
 * [Les Fonctions](GCC/lesFonctions)
 * [Les références de fonctions](GCC/ReferenceFonctions)
+* [Les sockets](Sockets)
+* [Fork/exec/signal/tube](BaseProgLinux/)
 
