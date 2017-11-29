@@ -11,7 +11,7 @@
 gestionnaire (int numero)
 {
 	int i;
-	signal (numero, gestionnaire);
+	//signal (numero, gestionnaire);
 	fprintf (stdout, "debut du gestionnaire de signal %d\n", numero); 
 	for (i = 1; i < 4; i ++) {
 		fprintf (stdout, "%d\n", i);

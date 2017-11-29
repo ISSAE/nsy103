@@ -10,7 +10,7 @@
 	void
 gestionnaire (int numero)
 {
-	fprintf (stdout, "\n%u a reçu le signal %d\n", getpid (), numero);
+	fprintf (stdout, "\n%u a recu le signal %d\n", getpid (), numero);
 }
 
 	int

@@ -87,3 +87,46 @@ sigaction (SIG_INT, &action, NULL);
 ```
 
 ## Un premier exemple
+
+* [Exemple avec sigaction sa_handler et sa_sigaction](exempleSigaction.c)
+
+
+# kill
+kill - Envoyer un signal à un processus
+
+```C
+#include <sys/types.h>
+#include <signal.h>
+
+int kill(pid_t pid, int sig);
+```
+
+## DESCRIPTION
+L'appel système kill() peut être utilisé pour envoyer n'importe quel signal à n'importe quel processus ou groupe de processus.
+
+Si pid est positif, le signal sig est envoyé au processus dont l'identifiant est indiqué par pid.
+
+# signal
+signal - Gestion de signaux ANSI C
+
+```C
+#include <signal.h>
+typedef void (*sighandler_t)(int);
+
+sighandler_t signal(int signum, sighandler_t handler);
+```
+
+## DESCRIPTION
+Le  comportement  de  signal()  varie  selon les versions d'UNIX, et a aussi varié au cours du temps dans les différentes versions de Linux. Évitez de l'utiliser : utilisez plutôt [sigaction](#sigaction).
+
+signal() installe le gestionnaire handler pour le signal signum. handler peut être SIG_IGN, SIG_DFL ou  l'adresse  d'une  fonction  définie  par  le  programmeur  (un  « gestionnaire  de signal »).
+
+Lors de l'arrivée d'un signal correspondant au numéro signum, l'un des événements suivants se produit :
+*  Si le gestionnaire vaut SIG_IGN, le signal est ignoré.
+*  Si le gestionnaire est SIG_DFL, l'action par défaut associée à ce signal est entreprise (consultez signal(7)).
+
+Dans  les systèmes UNIX d'origine, quand un gestionnaire défini par signal() était appelé lors de la distribution d'un signal, le gestionnaire du signal était remis à SIG_DFL, et le système ne bloquait pas la distribution des instances suivantes du signal. Cela revenait à appeler sigaction(2) avec les attribut suivants :
+
+`sa.sa_flags = SA_RESETHAND | SA_NODEFER;`
+
+__Dans les exemples avec la version Linux ubuntu 17.04 le comportement est différent!__
