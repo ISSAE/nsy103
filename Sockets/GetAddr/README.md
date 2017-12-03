@@ -87,4 +87,4 @@ struct addrinfo *getAddrInfo(const char *nom, const char *service, int type) {
     return result;
 
 }
-```
+```[Linux programmation système (Index)](http://lps.cofares.net/)

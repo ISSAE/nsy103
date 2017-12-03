@@ -43,4 +43,4 @@ Vous trouverer le premier exemple simple en TCP [Exemple echo client server TCP]
    1. initialiser une adresse ip:port (interface) dans la structure sockaddr_in pour la socket d'écoute en initialisant une structure adresse socket peut être fait directement ou en utilisant l'une des primitives (gethostbyname ou getaddrinfo) voir [Exemples](../Exemples)
    2. associer l'adresse a la socket avec la primitive [bind()](#bind)
 3.  (répétition) Envoi et reception de données [sendto()](API/#sendto) et [recvfrom()](API/#recvfrom)
-4. fermer la socket
+4. fermer la socket[Linux programmation système (Index)](http://lps.cofares.net/)
