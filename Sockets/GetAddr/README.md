@@ -1,5 +1,16 @@
 # Traduction d'adresses et de services réseau
 
+```C
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
+
+int getaddrinfo(const char *node, const char *service,
+                       const struct addrinfo *hints,
+                       struct addrinfo **res);
+
+void freeaddrinfo(struct addrinfo *res);
+```
 Étant  donnés  node  et  service,  qui  identifient  un hôte Internet et un service, getaddrinfo() renvoie une ou plusieurs structure addrinfo, chacune d'entre elles contenant une adresse Internet qui puisse être indiquée dans un appel à [bind](../Api/#bind) ou [connect](../APi/#connect). La fonction getaddrinfo() combine la fonctionnalité fournie par les fonctions gethostbyname  et getservbyname en une interface unique, mais à l'inverse de ces fonctions, getaddrinfo() est réentrante et permet aux programmes d'éliminer la dépendance envers IPv4 ou IPv6.
 
 La structure addrinfo utilisée par getaddrinfo() contient les membres suivants :

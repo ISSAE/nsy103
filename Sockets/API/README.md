@@ -110,7 +110,7 @@ Le paramètre backlog définit une longueur maximale  pour  la  file  des connex
 ### accept
 **Accepter une connexion sur un socket**
 
-L'appel système accept() est employé avec les sockets utilisant un pro‐tocole en mode connecté (SOCK_STREAM).  Il  extrait  la première  connexion  de  la file des connexions en attente de la socket sockfd à l'écoute, crée une nouvelle socket et alloue pour cette socket un  **nouveau  descripteur**  de  fichier qu'il renvoie. La nouvelle socket n'est pas en état d'écoute. La socket originale sockfd n'est pas  modifiée par l'appel système.
+L'appel système accept() est employé avec les sockets utilisant un protocole en mode connecté (SOCK_STREAM).  Il  extrait  la première  connexion  de  la file des connexions en attente de la socket sockfd à l'écoute, crée une nouvelle socket et alloue pour cette socket un  **nouveau  descripteur**  de  fichier qu'il renvoie. La nouvelle socket n'est pas en état d'écoute. La socket originale sockfd n'est pas  modifiée par l'appel système.
 
 L'argument  sockfd  est  une  socket  qui  a été créée avec la fonction [socket](#socket),  attachée  à  une  adresse  avec  [bind](#bind),  et  attend   des connexions après un appel [listen](#listen).
 

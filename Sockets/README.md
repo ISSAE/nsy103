@@ -2,7 +2,8 @@
 
 ## L'API 
 
-* [Les primitives de l'API Socket](API/) et les studtures de données utilisés
+* [Les primitives de l'API Socket](API/) et les structures de données utilisés
+* [Les étapes pour la communication Sockets](HowTo)
 * [Exemples simples](Exemples/)
 * [Comment remplir la structure représentant des adresses](GetAddr/)
 
