@@ -20,3 +20,4 @@ dup2() transforme newfd en une copie de oldfd, fermant auparavant newfd si besoi
 
 *  Si  oldfd n'est pas un descripteur de fichier valable, alors l'appel échoue et newfd n'est pas fermé.
 *  Si oldfd est un descripteur de fichier valable et newfd  a  la  même valeur que oldfd, alors dup2() ne fait rien et renvoie newfd.
+[Linux programmation système (Index)](http://lps.cofares.net/)

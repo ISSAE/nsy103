@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include "../lib/wrsock.h"
+#include "../helper/helperSO.h"
 #include "serviceEcho.h"
 #include <pthread.h>
 #include <stdint.h>
@@ -19,9 +19,9 @@ int main(int argc, char **argv) {
     pthread_t tid;
     
     if (argc==1) {
-        listen_fd = bindedSocket(NULL, "2023", SOCK_STREAM);
+        listen_fd = bindedSocket(NULL, "2023", SOCK_STREAM, NULL);
     }
-    else listen_fd = bindedSocket(NULL, argv[1], SOCK_STREAM);
+    else listen_fd = bindedSocket(NULL, argv[1], SOCK_STREAM, NULL);
 
     if (listen(listen_fd, 10) < 0) {
         perror("listen");

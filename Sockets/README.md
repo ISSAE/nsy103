@@ -2,7 +2,8 @@
 
 ## L'API 
 
-* [Les primitives de l'API Socket](API/) et les studtures de données utilisés
+* [Les primitives de l'API Socket](API/) et les structures de données utilisés
+* [Les étapes pour la communication Sockets](HowTo)
 * [Exemples simples](Exemples/)
 * [Comment remplir la structure représentant des adresses](GetAddr/)
 
@@ -36,3 +37,4 @@ La communication inter-processus de supporte deux domaines de communication :
 
 * le domaine Unix dans lequel deux processus se trouvant sur la même station Unix uniquement peuvent communiquer6 ;
 * le domaine Internet pour les processus utilisant le protocole TCP/IP pour communiquer entre eux.
+[Linux programmation système (Index)](http://lps.cofares.net/)

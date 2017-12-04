@@ -67,3 +67,4 @@ Compilez et effectuez l'édition des liens avec l'option -pthread.
 
 ## DESCRIPTION
 La fonction pthread_exit() termine le thread appelant et renvoie une valeur à travers retval qui, si le thread est joignable, est rendue disponible à un autre thread dans le même processus s'il appelle [pthread_join](#pthread_join).
+[Linux programmation système (Index)](http://lps.cofares.net/)

@@ -12,4 +12,4 @@ ou
 
 T nomTab[];
 
-nomTab = malloc(taille*sizeof(T));
+nomTab = malloc(taille*sizeof(T));[Linux programmation système (Index)](http://lps.cofares.net/)

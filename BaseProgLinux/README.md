@@ -18,3 +18,4 @@ Dans Linux, on appelle cette structure de données une table de descripteurs de 
 Les descripteurs de fichier peuvent désigner des fichiers, des répertoires, des devices bloc ou caractère (souvent appelés fichiers spéciaux), des pipes nommés ou des pipes anonymes, des sockets.
 
 ![Descripteur de fichier](fd.gif "File Descriptor tables")
+[Linux programmation système (Index)](http://lps.cofares.net/)

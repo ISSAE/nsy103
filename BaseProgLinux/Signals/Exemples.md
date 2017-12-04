@@ -130,3 +130,4 @@ Dans  les systèmes UNIX d'origine, quand un gestionnaire défini par signal() �
 `sa.sa_flags = SA_RESETHAND | SA_NODEFER;`
 
 __Dans les exemples avec la version Linux ubuntu 17.04 le comportement est différent!__
+[Linux programmation système (Index)](http://lps.cofares.net/)

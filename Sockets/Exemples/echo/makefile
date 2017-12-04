@@ -13,4 +13,4 @@ helperSO.o: ../helper/helperSO.c ../helper/helperSO.h
 	gcc -Wall -c $<
 
 clean:
-	rm wrsock.o echoCli echoSrv
+	rm helperSO.o echoCli echoSrv
