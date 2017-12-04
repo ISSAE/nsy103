@@ -9,20 +9,15 @@ int main() {
   char buffer[10];
   int nbc;
   pipe(p);
-
   if (fork() == 0) {
     // Je suis le fils
     close(p[1]); // Suprime le tube output de chez le fils
     printf("[INFO] Le pid du fils est %d\n", getpid());
-
     // Lire le input du tube
     nbc = read(p[0], buffer, 10);
-
     // Ecrire dans le standard output
     write(1, buffer, nbc);
-
     exit(0);
-
   } else {
     // je suis le père
     close(p[0]); // suprime le tube input chez le père
@@ -30,7 +25,6 @@ int main() {
     // Lire le standard input
     // read(0,buffer,10);
     dprintf(p[1], "%d\n", getpid());
-
     // write(p[1], buffer, strlen(buffer));
   }
 }
