@@ -1,3 +1,7 @@
+[Index Home](/) | [<- Base Programmation Linux](..) 
+-----------------|-------------------------------
+
+
 # Les primitive pour thread
 Un thread ou fil (d'exécution) ou tâche (terme et définition normalisés par ISO/CEI 2382-7:2000 ; autres appellations connues : processus léger, fil d'instruction, processus allégé, exétron, voire unité d'exécution1 ou unité de traitement) est similaire à un processus car tous deux représentent l'exécution d'un ensemble d'instructions du langage machine d'un processeur. Du point de vue de l'utilisateur, ces exécutions semblent se dérouler en parallèle. Toutefois, là où chaque processus possède sa propre mémoire virtuelle, les threads d'un même processus se partagent sa mémoire virtuelle. Par contre, tous les threads possèdent leur propre pile d’appel.
 
@@ -6,6 +10,8 @@ Un thread ou fil (d'exécution) ou tâche (terme et définition normalisés par 
 * [Création de thread pthread_create](#pthread_create)
 * [Sychronisation entre thread](#pthread_join)
 * [Termonasion de thread](#pthread_exit)
+* [Semaphore pour threads](SemaphoreTh.md)
+
 
 # pthread_create
 pthread_create - Créer un nouveau thread
@@ -20,7 +26,8 @@ Compilez et effectuez l'édition des liens avec l'option __-pthread__.
 Compilez et effectuez l'édition des liens avec l'option __-pthread__.
 
 ## DESCRIPTION
-La  fonction  pthread_create()   démarre  un  nouveau  thread  dans le processus appelant.
+La  fonction  pthread_create()   démarre  un  nouveau  thread  dans le processus appelant.  Le nouveau thread commence par appeler  start_routine() voir [Référence de fonctions](/GCC/ReferenceFonctions);
+       arg est passé comme unique argument de start_routine().
 
 Le nouveau thread se termine d'une des manières suivantes :
 
@@ -68,3 +75,17 @@ Compilez et effectuez l'édition des liens avec l'option -pthread.
 ## DESCRIPTION
 La fonction pthread_exit() termine le thread appelant et renvoie une valeur à travers retval qui, si le thread est joignable, est rendue disponible à un autre thread dans le même processus s'il appelle [pthread_join](#pthread_join).
 [Linux programmation système (Index)](http://lps.cofares.net/)
+
+# pthread_self 
+Obtenir l'identifiant du thread appelant
+
+```C
+#include <pthread.h>
+
+       pthread_t pthread_self(void);
+
+       Compilez et effectuez l'édition des liens avec l'option -pthread.
+```
+
+## DESCRIPTION
+La  fonction  pthread_self()  renvoie l'identifiant du thread appelant. C'est la même valeur qui est  renvoyée  dans  *thread  dans  l'appel  à [pthread_create](#pthread_create)  qui a créé ce thread.
