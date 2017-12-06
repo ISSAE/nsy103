@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include "../lib/wrsock.h"
+#include "../helper/helperSO.h"
 #include "serviceEcho.h"
 #include <pthread.h>
 #include <stdint.h>
@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
         }
         
         if (fork() ==0) {
-            printf("un service fils pid=%d père=%d\n",getpid(), getppid());
+            printf("[INFO] un service fils pid=%d père=%d\n",getpid(), getppid());
             //Le fils fait le service et se termine
             service((void *)(intptr_t)comm_fd);
             exit(0);

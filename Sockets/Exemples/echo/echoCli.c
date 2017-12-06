@@ -5,7 +5,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <arpa/inet.h>
-#include "../lib/wrsock.h"
+#include "../helper/helperSO.h"
 
 int main(int argc, char **argv) {
     int sockfd;
@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
         write(sockfd, sendline, taille + 1); /* +1 pour transmettre un 0 de fin de chaine*/
         taille=read(sockfd, recvline, 100);
         recvline[taille]=0;
-        printf("Nous avons reçu %s", recvline);
+        printf("[INFO] Nous avons reçu %s", recvline);
     } while (recvline[0]!='.');
     
     close (sockfd);

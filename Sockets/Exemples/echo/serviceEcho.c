@@ -19,7 +19,7 @@ void *service(void *comm_fd) {
             exit(3);
         }
         str[nb] = 0;
-        printf("Le serveur reçoit - %s", str);
+        printf("[INFO] Le serveur reçoit - %s", str);
         write(comm_sock, str, nb + 1);
 
     } while (str[0] != '.');
