@@ -1,3 +1,5 @@
+{% include head.md %}
+
 # ISSAE Cnam Liban Exemples pour NSY103 : Linux : principes et programmation C
 
 Vous touvez dans ce dépôt les exemples du cours NSY103 au Cnam Liban et certains complément de programmation C en général: 
