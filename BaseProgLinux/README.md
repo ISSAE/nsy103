@@ -4,11 +4,22 @@
 # Base de la programmation Linux
 
 * [Variables d'Environnement](Environnement)
+* [Processus](GCC/lesProcessus/)
 * [Famille d'exec pour le recoivrement](ExecFamily)
 * [Signaux](Signals)
 * [Threads](Threads)
-* [Tube anonyme](TubeAnonyme)
-* [Tube nommé](TubeNomme)
+* Communication entre processus
+  * [Tube anonyme](TubeAnonyme)
+  * [Tube nommé](TubeNomme)
+  * [Mémoire partagée POSIX](MemoirePartagee)
+  * [Socket](/Sockets)
+  * [Messages et Mémorei partagé System V](MSGQ)
+* Synchronisation entre processus et/ou thread
+  * [Semaphore System V](/ProgAvancee/SemaphorePourProc)
+  * [Semaphore POSIX](Threads/SemaphoreTh.md)
+
+
+
 
 ## Généralités descripteur de fichier
 
@@ -21,4 +32,5 @@ Dans Linux, on appelle cette structure de données une table de descripteurs de 
 Les descripteurs de fichier peuvent désigner des fichiers, des répertoires, des devices bloc ou caractère (souvent appelés fichiers spéciaux), des pipes nommés ou des pipes anonymes, des sockets.
 
 ![Descripteur de fichier](fd.gif "File Descriptor tables")
+
 [Linux programmation système (Index)](http://lps.cofares.net/)
