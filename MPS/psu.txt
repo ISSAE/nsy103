@@ -1,3 +1,0 @@
-USER       PID %CPU %MEM   VSZ  RSS TTY      STAT START   TIME COMMAND
-pfares    1184  0.0  0.7  2624 1444 pts/1    S    22:42   0:00 bash
-pfares    1210  0.0  0.4  2656  772 pts/1    R    22:45   0:00 ps -u

@@ -1,7 +1,0 @@
-#!/bin/bash
-if grep -q "^$1:" /etc/passwd
-then
-	echo "L'utilisateur possède un compte"
-else
-	echo "L'utilisateur ne passède pas de compte"
-fi

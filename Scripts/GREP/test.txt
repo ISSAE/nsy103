@@ -1,5 +1,0 @@
-Supermarket 50 Clothespegs 1.25 
-Clothes 1 Trousers 24.99
-Clothes 2 Skirt 28.00
-ordi 6 Socks abcd 
-Clothes 6 Socks 9.00

@@ -1,6 +1,0 @@
-  F S   UID   PID  PPID  C PRI  NI ADDR    SZ WCHAN  TTY          TIME CMD
-000 S   500  1164  1036  0  69   0    -   423 wait4  pts/0    00:00:00 man
-000 S   500  1167  1164  0  69   0    -   560 wait4  pts/0    00:00:00 sh
-040 S   500  1168  1167  0  68   0    -   560 wait4  pts/0    00:00:00 sh
-000 S   500  1173  1168  0  69   0    -   512 read_c pts/0    00:00:00 less
-000 R   500  1196  1184  0  74   0    -   770 -      pts/1    00:00:00 ps

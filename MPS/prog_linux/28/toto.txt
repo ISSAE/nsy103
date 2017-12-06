@@ -1,2 +1,0 @@
-direct : v=10
-après dup : v=10

@@ -1,4 +1,0 @@
-hw
-hw.c
-ls.txt
-toto

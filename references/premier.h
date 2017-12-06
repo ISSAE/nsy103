@@ -1,1 +1,0 @@
-double premier(double,double);
