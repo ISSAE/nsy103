@@ -5,7 +5,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#define NB_THREADS 5
+#define NB_THREADS 2
 
 void * fn_thread(void * numero);
 
@@ -22,12 +22,12 @@ main(void) {
         if ((ret = pthread_create(& thread [i],
                 NULL,
                 fn_thread,
-                (void *) i)) != 0) {
+                (void *) (intptr_t) i)) != 0) {
             fprintf(stderr, "%s", strerror(ret));
             exit(1);
         }
 
-    while (compteur < 40) {
+    while (1) {
         fprintf(stdout, "main : compteur = %d\n", compteur);
         sleep(1);
     }
@@ -39,9 +39,9 @@ main(void) {
 
 void *
 fn_thread(void * num) {
-    int numero = (int) num;
+    int numero = (int) (intptr_t) num;
     while (1) {
-        usleep(numero * 10);
+        sleep((numero+1));
         compteur++;
         fprintf(stdout, "Thread %d : compteur = %d\n",
                 numero, compteur);

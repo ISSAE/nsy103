@@ -21,6 +21,10 @@ static void hdl (int sig, siginfo_t *siginfo, void *context) {
 static void hand (int sig) {
     printf ("Siganl %d j'ai aucune autre info! et c'est souvent suffisant\n", sig);
 }
+
+static void ctrC (int sig) {
+   printf ("Je ne veux pas m'arreter\n");
+}
   
  int main (int argc, char *argv[]) {
      struct sigaction act;
@@ -41,12 +45,16 @@ static void hand (int sig) {
   
     acth.sa_handler = &hand;
      
+
     printf ("SIGUSR1 = %d\n",SIGUSR1);
     if (sigaction(SIGUSR1, &acth, NULL) < 0) {
         perror ("sigaction");
         return 1;
     }
-     while (1)
+
+    signal(SIGINT,ctrC);
+
+    while (1)
          sleep (10);
   
      return 0;

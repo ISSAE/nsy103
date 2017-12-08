@@ -21,8 +21,10 @@ int main (int argc, char *argv[]) {
          return 1;
      }
 
-     while (1)
-         sleep (10);
+     while (1) {
+         printf(".\n");
+         sleep (1);
+    }
   
      return 0;
  }
