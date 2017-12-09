@@ -3,7 +3,7 @@
 
 ## Description des sémaphores POSIX (librairie pthread)
 
-La librairie de gestion des threads offre les fonctions ci-dessous pour créer et utiliser des sémaphores. Attention : ces sémaphores sont propres à un processus. Ils permettent de synchroniser plusieurs threads entre eux, mais ils ne peuvent synchroniser plusieurs processus. Pour réaliser cette synchronisation il faut se tourner vers les [sémaphores système V](/ProgAvancee/SemaphorePourProc) basés sur les IPC (Inter Processus Communication) .
+La librairie de gestion des threads offre les fonctions ci-dessous pour créer et utiliser des sémaphores. Attention : ces sémaphores sont propres à un processus. Ils permettent de synchroniser plusieurs threads entre eux, mais ils ne peuvent synchroniser plusieurs processus. Pour réaliser cette synchronisation il faut se tourner vers les [sémaphores système V](/ProgAvancee/SemaphorePourProc/semaphor.md) basés sur les IPC (Inter Processus Communication) .
 
 * int [sem_init](#sem_init) (sem_t *semaphore, int pshared, unsigned int valeur)
 > Création d'un sémaphore et préparation d'une valeur initiale.
@@ -37,9 +37,8 @@ sem_init()  initialise le sémaphore non nommé situé à l'adresse pointée par
 
 L'argument pshared indique si  ce  sémaphore  sera  partagé  entre  les threads d'un processus ou entre processus.
 
-    Si pshared vaut 0, le sémaphore est partagé entre les threads d'un même processus et devrait être situé à une adresse visible par tous les threads par  exemple,  une variable globale ou une variable allouée dynamique‐
-       ment dans le tas).
+Si pshared vaut 0, le sémaphore est partagé entre les threads d'un même processus et devrait être situé à une adresse visible par tous les threads par  exemple,  une variable globale ou une variable allouée dynamiquement dans le tas).
 
-    Si pshared n'est pas nul, le sémaphore est partagé entre  processus  et devrait  être  situé  dans  une  région  de mémoire partagée (consultez shm_open, mmap et shmget) (puisqu'un fils  créé  avec  fork hérite de la projection mémoire du père, il peut accéder au sémaphore). Tout processus qui peut accéder à la région de  mémoire  partagée  peut opérer sur le sémaphore avec sem_post, sem_wait, etc.
+Si pshared n'est pas nul, le sémaphore est partagé entre  processus  et devrait  être  situé  dans  une  région  de mémoire partagée (consultez shm_open, mmap et shmget) (puisqu'un fils  créé  avec  fork hérite de la projection mémoire du père, il peut accéder au sémaphore). Tout processus qui peut accéder à la région de  mémoire  partagée  peut opérer sur le sémaphore avec sem_post, sem_wait, etc. **Préférer Les _[sémaphores système V](/ProgAvancee/SemaphorePourProc/semaphor.md)_ dans le cas de sémaphore inter-processus**
 
 L'initialisation d'un sémaphore qui a déjà été initialisé résulte en un comportement indéfini.
