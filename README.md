@@ -1,4 +1,5 @@
-{% include head.md %}
+[Index Home](/) |
+----
 
 # ISSAE Cnam Liban Exemples pour NSY103 : Linux : principes et programmation C
 
@@ -9,9 +10,9 @@ Vous touvez dans ce dépôt les exemples du cours NSY103 au Cnam Liban et certai
  * [Le partage GDrive](https://drive.google.com/drive/folders/0B2NK97qOKj2ja2xMbGx1NnZCdzA?usp=sharing)
  * [La classroom](https://classroom.google.com/u/2/c/MjQwOTg4MjI4OVpa) (remarque le code d'accès au cours est fournis lors de votre inscription au coyrs NSY103 au Cnam Liban)
  
-## Les sous répértoires corespondent aux différentes séances de TP (en présentiel ou en travail personel)
+## Les sous répertoires correspondent aux différentes séances ou thèmes du cours [NSY103](http://formation.cnam.fr/rechercher-par-discipline/linux-principes-et-programmation-208639.kjsp) (Code Camp, en présentiel ou en travail personnel)
 
-### Le langauage C et le compilateur gcc
+### Le language C et le compilateur gcc
 
 * [Vos premiers pas](GCC/PremiersProgrammes)
 * [Les Références](GCC/lesReferences/)
@@ -20,15 +21,19 @@ Vous touvez dans ce dépôt les exemples du cours NSY103 au Cnam Liban et certai
 * [Les Fonctions](GCC/lesFonctions)
 * [Les références de fonctions](GCC/ReferenceFonctions)
 
-### Processus Thread, Commmunication par caneaux tube, socket ou Communication par mémoire partagée
+### Processus Thread, Communications par canaux tube, socket ou Communication par mémoire partagée
 * [Les processus]()
+* [Les threads](BaseProgLinux/Threads)
 * [Les sockets](Sockets)
 * [Les signaux](BaseProgLinux/Signals)
-* [Les threads](BaseProgLinux/Threads)
 * [Fork/exec/signal/tube](BaseProgLinux/)
 
-### Synchronisation et semaphore
+### Synchronisation et sémaphore
 
+* [Concurrences et synchronisation](ConcurenceEtSynchro)
+  * [Les sémaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh.md)
+  * [Les sémaphores, concept et implémentation System V](/ProgAvancee/SemaphorePourProc/semaphor.md)
 
+---
 
 [Linux programmation système (Index)](/)

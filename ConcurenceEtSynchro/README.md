@@ -1,3 +1,6 @@
+[Index Home](/) |
+----
+
 # Le problème due a la concurrence (parallélisme d'exécution)
 
 ## Entrelacement non déterministe
@@ -48,6 +51,7 @@ Le résultat est 1 ou 2. Ceci n'arriverait pas si l'instruction x=x+1 était ato
 Voir cet exemple [Concurence](/BaseProgLinux/Threads/concurence.c)
 
 # Quels solutions alors dans Linux?
+
 ## Exclusion mutuelle
 L'exclusion mutuelle est le mécanisme qui permet qu'une et une seule tâche accède à une ressource partagée à la fois à un instant donné. Pour cela, on utilise une variable spéciale appelée sémaphore d'exclusion mutuelle qui joue le rôle de verrou pour accéder à la ressource. Sous Posix, elle est mise en place via les 3 primitives suivants :
 
@@ -63,6 +67,8 @@ L'exclusion mutuelle est le mécanisme qui permet qu'une et une seule tâche acc
 Voir [Les sémaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh.md)
 
 ## Sémaphore System V
+
+Voir [Les sémaphores, concept et implémentation](/ProgAvancee/SemaphorePourProc/semaphor.md)
 
 ## Variable condition
 
