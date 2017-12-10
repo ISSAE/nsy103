@@ -77,7 +77,7 @@ Voir [Les sémaphores, concept et implémentation](/ProgAvancee/SemaphorePourPro
 ### Producteurs consommateurs 
 ### Lecteurs rédacteurs
 
-voir [Solutions problèmes classiques avec Sémaphores] (/ConcurenceEtSynchro/SolutionsProblesConcurence.md)
+voir [Solutions problèmes classiques avec Sémaphores](/ConcurenceEtSynchro/SolutionsProblesConcurence.md)
 
 ## Variable condition
 

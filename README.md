@@ -33,6 +33,7 @@ Vous touvez dans ce dépôt les exemples du cours NSY103 au Cnam Liban et certai
 * [Concurrences et synchronisation](ConcurenceEtSynchro)
   * [Les sémaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh.md)
   * [Les sémaphores, concept et implémentation System V](/ProgAvancee/SemaphorePourProc/semaphor.md)
+  * [Solutions problèmes classiques avec Sémaphores](/ConcurenceEtSynchro/SolutionsProblesConcurence.md)
 
 ---
 
