@@ -2,13 +2,13 @@ SHELL=/bin/sh
 
 CFLAGS = -Wall -g -pedantic
 
-EXECUTABLES=				\
-		exemple_msgctl		\
-		exemple_msgrcv		\
-		exemple_msgsnd		\
-		exemple_shmctl		\
-		exemple_shmread		\
-		exemple_shmwrite	\
+EXECUTABLES=			\
+		msgctl		\
+		msgrcv		\
+		msgsnd		\
+		shmctl		\
+		shmread		\
+		shmwrite	\
 
 
 all : ${EXECUTABLES}

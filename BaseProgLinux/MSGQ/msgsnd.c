@@ -5,13 +5,13 @@
 #include <sys/msg.h>
 #include <stdlib.h>
 
-typedef struct {
+typedef struct _message_t {
     long type;
     char texte [256];
 
 } message_t;
 
-typedef _point {
+struct _point {
     int x;
     int y;
 } point;
@@ -21,10 +21,10 @@ main(int argc, char * argv []) {
     key_t key;
     message_t message;
     int file;
-    long type;
-
-    if (argc != 3) {
-        fprintf(stderr, "Syntaxe : %s fichier_cl� type \n",
+    
+    point.x=3; point.y=5;
+    if (argc != 4) {
+        fprintf(stderr, "Syntaxe : %s fichier_clé type message \n",
                 argv [0]);
         exit(1);
     }
@@ -32,17 +32,22 @@ main(int argc, char * argv []) {
         perror("ftok");
         exit(1);
     }
-    if (sscanf(argv [2], "%ld", & type) != 1) {
+    if ((sscanf(argv [2], "%ld", & (message . type)) != 1)
+            || (message . type <= 0)) {
         fprintf(stderr, "Type invalide");
         exit(1);
     }
+    strncpy(message . texte, argv [3], 255);
+    message . texte [255] = '\0';
+
+    memcpy(message.texte, &point, sizeof(struct _point));
     if ((file = msgget(key, IPC_CREAT | 0600)) == -1) {
         perror("msgget");
         exit(1);
     }
-    if (msgrcv(file, (void *) & message, 256, type, 0) >= 0)
-        fprintf(stdout, "(%ld) %s \n", message . type, message . texte);
-    else
-        perror("msgrcv");
+    if (msgsnd(file, (void *) & message, 256, 0) < 0) {
+        perror("msgsnd");
+        exit(1);
+    }
     return (0);
 }
