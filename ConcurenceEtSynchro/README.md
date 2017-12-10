@@ -70,6 +70,15 @@ Voir [Les sémaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh.md)
 
 Voir [Les sémaphores, concept et implémentation](/ProgAvancee/SemaphorePourProc/semaphor.md)
 
+## Des problèmes résolues avec des sémaphores
+
+### Exclusion mutuelle
+### Rendez-vous
+### Producteurs consommateurs 
+### Lecteurs rédacteurs
+
+voir [Solutions problèmes classiques avec Sémaphores] (/ConcurenceEtSynchro/SolutionsProblesConcurence.md)
+
 ## Variable condition
 
 Une  condition  (abréviation  pour "variable condition") est un mécanisme de synchronisation permettant à un thread de suspendre son exécution jusqu'à ce qu'une certaine condition (un prédicat) sur des données partagées soit vérifiée. Les opérations fondamentales  sur  les  conditions  sont : signaler la condition (quand le prédicat devient vrai) et attendre la condition en suspendant l'exécution du  thread  jusqu'à  ce qu'un autre thread signale la condition.
