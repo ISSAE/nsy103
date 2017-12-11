@@ -22,11 +22,21 @@ Vous touvez dans ce dépôt les exemples du cours NSY103 au Cnam Liban et certai
 * [Les références de fonctions](GCC/ReferenceFonctions)
 
 ### Processus Thread, Communications par canaux tube, socket ou Communication par mémoire partagée
-* [Les processus]()
+* [Les processus](BaseProgLinux/Processus)
 * [Les threads](BaseProgLinux/Threads)
-* [Les sockets](Sockets)
 * [Les signaux](BaseProgLinux/Signals)
-* [Fork/exec/signal/tube](BaseProgLinux/)
+* Communication entre processus
+  * Basée SGF
+    * [Tube anonyme](TubeAnonyme)
+    * [Tube nommé](TubeNomme)
+    * [Socket](/Sockets)
+  * Non basé SGF
+    * [Mémoire partagée POSIX](MemoirePartagee)
+    * [Messages et Mémoire partagé System V](MSGQ)
+    * [Les sémaphores, concept et implémentation System V](/ProgAvancee/SemaphorePourProc/semaphor.md)
+    * [Les sémaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh.md)
+* [Compléments ...](BaseProgLinux/)
+* [Avancée ...](ProgAvancee)
 
 ### Synchronisation et sémaphore
 
