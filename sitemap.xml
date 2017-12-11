@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://lps.cofares.net/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/BaseProgLinux/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/ProgAvancee/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/GCC/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/GCC/PremiersProgrammes/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/GCC/lesReferences/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/GCC/lesTableaux/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/GCC/lesStructures/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/GCC/lesFonctions/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/GCC/ReferenceFonctions/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/BaseProgLinux/Processus/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/BaseProgLinux/Threads/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/BaseProgLinux/Signals/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/Sockets/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/ProgAvancee/SemaphorePourProc/semaphor.html</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/BaseProgLinux/Threads/SemaphoreTh.html</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/ConcurenceEtSynchro/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/ConcurenceEtSynchro/SolutionsProblesConcurence.html</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/BaseProgLinux/TubeAnonyme/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/BaseProgLinux/MemoirePartagee/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/BaseProgLinux/MSGQ/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/ProgAvancee/SemaphorePourProc/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/ProgAvancee/.</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/GCC/lesProcessus/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/BaseProgLinux/Signals/Exemples.html</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/Sockets/API/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/Sockets/HowTo/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/Sockets/Exemples/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/Sockets/GetAddr/</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/BaseProgLinux/Threads/.</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/Sockets/HowTo/EchoTCP.html</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://lps.cofares.net/Sockets/HowTo/EchoUDP.html</loc>
+  <lastmod>2017-12-11T13:44:47+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+</urlset>
