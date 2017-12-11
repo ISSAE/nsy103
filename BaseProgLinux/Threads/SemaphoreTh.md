@@ -1,6 +1,10 @@
 [Index Home](/) | [Threads](.) | [<- Base Programmation Linux](..) 
 -----------------|-------------| ------------------
 
+Voir aussi <a class="buttons github" href="https://github.com/ISSAE/nsy103/tree/master/BaseProgLinux/Threads">Les exemples: présents dans GitHub</a>
+
+---
+
 Le problème de la coordination entre threads est un problème majeur (vois exemple d'un progromme ne fonctionnant pas correctement [concurence.faux.c](https://github.com/ISSAE/nsy103/blob/master/BaseProgLinux/Threads/concurence.fux.c) et sa version correcte [concurence.c](https://github.com/ISSAE/nsy103/blob/master/BaseProgLinux/Threads/concurence.c). Outre les [mutex](MutexTh.md) adapté aux exclusion mutuelles, d’autres solutions à ce problème ont été développées. Historiquement, une des premières propositions de coordination sont les sémaphores [Dijkstra]. Un sémaphore est une structure de données qui est maintenue par le système d’exploitation et contient :
 
 un entier qui stocke la valeur, positive ou nulle, du sémaphore.

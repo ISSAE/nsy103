@@ -1,0 +1,1 @@
+# Variables conditions pour la synchronisation
