@@ -1,7 +1,14 @@
 #include <stdio.h>
 #define N 10
 
-// Definition d'un buffer circulaire
+/** Exercice AFAIRE
+ * ajouter l'utilisation des semaphore et 2 threads
+ * 1 producteur
+ * 1 consomateur
+ * dans le buffer
+ */
+
+// Definition d'un buffer circulaire -----------------
 int buffer[N];
 int debut=0;
 int fin=0;
@@ -17,7 +24,36 @@ int prendre() {
     debut = (debut+1)%N;
     return res;
 }
+//---------------------------------------------------------
+// test produire
 
+int produire() {
+    int res = rand();
+    printf("J'ai produit %d",res);
+    return res;
+}
+void consomer(int elem) {
+    printf("Je consome %d", elem);
+}
+
+//Les fonction de test 
+//Le squelette des 2 threads===============================
+void *producteur(void *args) {
+    int data;
+    while (1) {
+        data = produire();
+        ajouter(data);
+    }
+}
+
+void * consomateur(void *args) {
+    int data;
+    while (1) {
+        data = prendre();
+        consomer (data);
+    }
+}
+//==========================================================
 int main() {
     int i;
     //tester le buffer

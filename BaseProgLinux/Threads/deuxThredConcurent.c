@@ -3,18 +3,11 @@
 extern unsigned long x;
 unsigned long x = 2;
 void *pa(void *p) {
-  int i;
-  for (i = 0; i < 5; i++) {
-    x = x + 1;
-    x = x + 2;
-  }
+  x = x + 1;
 }
 
 void *pb(void *p) {
-  int i;
-  for (i = 0; i < 5; i++) {
-    x = x * 3;
-  }
+  x = x * 3;
 }
 
 void lanceThread() {
@@ -22,8 +15,9 @@ void lanceThread() {
   pthread_create(&ta, 0, pa, 0);
   pthread_create(&tb, 0, pb, 0);
 
-  pthread_join(ta, 0);
   pthread_join(tb, 0);
+  pthread_join(ta, 0);
+ 
 }
 int main() {
   x = 2;
