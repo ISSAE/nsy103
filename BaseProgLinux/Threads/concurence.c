@@ -44,8 +44,8 @@ int main(void)
         err = pthread_create(&(tid[i]), NULL, &incX, &i);
         if (err != 0)
             printf("\nPas réussi à créer le thread :[%s]", strerror(err));
-        else
-            printf("\n création de thread ok %ld\n",tid[i]);
+        //else
+            //printf("\n création de thread ok %ld\n",tid[i]);
 
         i++;
     }

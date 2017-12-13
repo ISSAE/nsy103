@@ -21,6 +21,7 @@ int ajouterBC(struct _buffer_circ *bc, void *elem) {
          bc->fin = (bc->fin+1) % (bc->taille);
          bc->nb++;
          //printf("1. après dans %p %d\n",bc->tab[bc->fin],bc->fin);
+         return bc->nb;
      }
 }
 void *retirer(struct _buffer_circ *bc) {
