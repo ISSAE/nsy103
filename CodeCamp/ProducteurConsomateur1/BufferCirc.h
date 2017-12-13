@@ -10,3 +10,5 @@ struct _buffer_circ *newBufferCirc(int taille);
 int ajouterBC(struct _buffer_circ *bc, void * elem);
 void *retirer(struct _buffer_circ *bc);
 void trace(struct _buffer_circ *bc);
+
+extern struct _buffer_circ *buff;
