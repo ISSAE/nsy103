@@ -6,27 +6,38 @@
 #define N 10
 
 /** Exercice AFAIRE
- * ajouter l'utilisation des semaphore et 2 threads
+ * ajouter l'utilisation des semaphores aux 2 threads
  * 1 producteur
  * 1 consomateur
  * dans le buffer
+ * Il y a 2 problèmes a resoudres
+ * A: La synchronisation entre producteur et consomateur et la taille du buffer
+ * B: La resource critique qui sont les indexs du Buffer (debut,fin et nb)
  */
 
+ // Le buffer un donné globale partagée par tous les threads
 struct _buffer_circ *buff;
 
 
 //---------------------------------------------------------
-// test produire
-
+// test produire et consomer 2 fonctions qui simulent la production de quelques choses
+// -------------------------------------------------------
 int produire() {
-  int res = rand();
+  int res;
+  res = rand();
   printf("J'ai produit %d\n", res);
   return res;
 }
 void consomer(int elem) { printf("Je consome %d\n", elem); }
 
-// Les fonction de test
+// Les fonctions (thread) pour simuler les "services" de production et consomation
 // Le squelette des 2 threads===============================
+/**
+ * produire indéfiniment
+ * ALGO
+ *   produire quelque chose
+ *   le déposer dans le buffer
+ */
 void *producteur(void *args) {
   int data;
   while (1) {
@@ -35,7 +46,12 @@ void *producteur(void *args) {
     // ajouter(data);
   }
 }
-
+/**
+ * consomer indéfiniment
+ * ALGO
+ *   recuperer quleue chose du buffer
+ *   puis le consomer (ie le traiter)
+ */
 void *consomateur(void *args) {
   int data;
   while (1) {
@@ -44,7 +60,13 @@ void *consomateur(void *args) {
     consomer(data);
   }
 }
+//
+// La question! comment savoir que tous les messages produits seront consomés correctement???
 //==========================================================
+
+/**
+ * main : initialisation et lancement des 2 Threads
+ */
 int main() {
   int i;
   // tester le buffer
