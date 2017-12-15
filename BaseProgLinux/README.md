@@ -4,7 +4,7 @@
 # Base de la programmation Linux
 
 * [Variables d'Environnement](Environnement)
-* [Processus](GCC/lesProcessus/)
+* [Processus](/GCC/lesProcessus/)
 * [Famille d'exec pour le recouvrement](ExecFamily)
 * [Signaux](Signals)
 * [Threads](Threads)
@@ -16,7 +16,7 @@
   * [Messages et Mémoire partagé System V](MSGQ)
 * Synchronisation entre processus et/ou thread
   * [Sémaphore System V](/ProgAvancee/SemaphorePourProc/semaphor)
-  * [Sémaphore POSIX](Threads/SemaphoreTh.md)
+  * [Sémaphore POSIX](Threads/SemaphoreTh)
 
 
 ---

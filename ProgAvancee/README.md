@@ -9,6 +9,6 @@
   * [Threads](/BaseProgLinux/Threads)
 * [Besoins de Synchronisation]
   * [Semaphore System V](/ProgAvancee/SemaphorePourProc)
-  * [Semaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh.md)
+  * [Semaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh)
 
 # File messages POSIX et SYSTEMV

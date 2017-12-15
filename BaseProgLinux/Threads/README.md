@@ -10,7 +10,7 @@ Un thread ou fil (d'exécution) ou tâche (terme et définition normalisés par 
 * [Création de thread pthread_create](#pthread_create)
 * [Sychronisation entre thread](#pthread_join)
 * [Termonasion de thread](#pthread_exit)
-* [Semaphore pour threads](SemaphoreTh.md)
+* [Semaphore pour threads](SemaphoreTh)
 
 
 # pthread_create

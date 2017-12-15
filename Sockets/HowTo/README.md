@@ -1,6 +1,6 @@
 # Les étapes pour la comminication socket (Les protocoles TCP et UDP)
 
-Vous trouverer le premier exemple simple en TCP [Exemple echo client server TCP](EchoTCP.md) et en UDP [Exemple echo client server UDP](EchoUDP.md)
+Vous trouverer le premier exemple simple en TCP [Exemple echo client server TCP](EchoTCP) et en UDP [Exemple echo client server UDP](EchoUDP)
 
 ## mode connecté TCP
 

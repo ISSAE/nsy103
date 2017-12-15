@@ -28,7 +28,7 @@ Pour Linux, les fichiers sont organisés dans des fichiers particulier dit répe
 
 ![Principe SGF Linux](/imgs/SGFLinuxPrinceipes.png)
 
-L'interface logiciel est composé d'un [ensemble de primitives](APISGF.md) en voici l'essentiel ([suivre le lien](APISGF.md))
+L'interface logiciel est composé d'un [ensemble de primitives](APISGF) en voici l'essentiel ([suivre le lien](APISGF))
 
 # Généralités descripteur de fichier
 

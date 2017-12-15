@@ -27,23 +27,23 @@ Vous touvez dans ce dépôt les exemples du cours NSY103 au Cnam Liban et certai
 * [Les signaux](BaseProgLinux/Signals)
 * Communication entre processus
   * Basée SGF
-    * [Tube anonyme](TubeAnonyme)
-    * [Tube nommé](TubeNomme)
+    * [Tube anonyme](BaseProgLinux/TubeAnonyme)
+    * [Tube nommé](BaseProgLinux/TubeNomme)
     * [Socket](/Sockets)
   * Non basé SGF
-    * [Mémoire partagée POSIX](MemoirePartagee)
-    * [Messages et Mémoire partagé System V](MSGQ)
-    * [Les sémaphores, concept et implémentation System V](/ProgAvancee/SemaphorePourProc/semaphor.md)
-    * [Les sémaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh.md)
+    * [Mémoire partagée POSIX](BaseProgLinux/MemoirePartagee)
+    * [Messages et Mémoire partagé System V](BaseProgLinux/MSGQ)
+    * [Les sémaphores, concept et implémentation System V](/ProgAvancee/SemaphorePourProc/semaphor)
+    * [Les sémaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh)
 * [Compléments ...](BaseProgLinux/)
 * [Avancée ...](ProgAvancee)
 
 ### Synchronisation et sémaphore
 
 * [Concurrences et synchronisation](ConcurenceEtSynchro)
-  * [Les sémaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh.md)
-  * [Les sémaphores, concept et implémentation System V](/ProgAvancee/SemaphorePourProc/semaphor.md)
-  * [Solutions problèmes classiques avec Sémaphores](/ConcurenceEtSynchro/SolutionsProblesConcurence.md)
+  * [Les sémaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh)
+  * [Les sémaphores, concept et implémentation System V](/ProgAvancee/SemaphorePourProc/semaphor)
+  * [Solutions problèmes classiques avec Sémaphores](/ConcurenceEtSynchro/SolutionsProblesConcurence)
 
 ---
 

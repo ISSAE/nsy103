@@ -25,7 +25,7 @@ Ce mécanisme _**permet**_ donc de _**limiter l'exécution d'une portion de code
 
 Il existe deux ensembles de primitives pour réaliser des sémaphores sous Linux:
 1. Les sémaphores de la norme System V, plutôt adapté a la synchronisation inter-processus (décrit dans cette page). 
-2. Les [sémaphore de la norme POSIX](/BaseProgLinux/Threads/SemaphoreTh.md) plutôt adapté au concurrence inter-thread
+2. Les [sémaphore de la norme POSIX](/BaseProgLinux/Threads/SemaphoreTh) plutôt adapté au concurrence inter-thread
 
 ### présentation sémaphores System V
 
