@@ -65,12 +65,12 @@ L'exclusion mutuelle est le mécanisme qui permet qu'une et une seule tâche acc
 ## Sémaphore POSIX
 
 
-* Voir [Les sémaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh.md)
+* Voir [Les sémaphore POSIX](/BaseProgLinux/Threads/SemaphoreTh)
 * Voir <a class="buttons github" href="https://github.com/ISSAE/nsy103/tree/master/BaseProgLinux/Threads">Les exemples: présents dans GitHub</a>
 
 ## Sémaphore System V
 
-Voir [Les sémaphores, concept et implémentation](/ProgAvancee/SemaphorePourProc/semaphor.md)
+Voir [Les sémaphores, concept et implémentation](/ProgAvancee/SemaphorePourProc/semaphor)
 
 ## Des problèmes résolues avec des sémaphores
 
@@ -79,7 +79,7 @@ Voir [Les sémaphores, concept et implémentation](/ProgAvancee/SemaphorePourPro
 ### Producteurs consommateurs 
 ### Lecteurs rédacteurs
 
-voir [Solutions problèmes classiques avec Sémaphores](/ConcurenceEtSynchro/SolutionsProblesConcurence.md)
+voir [Solutions problèmes classiques avec Sémaphores](/ConcurenceEtSynchro/SolutionsProblesConcurence)
 
 ## Variable condition
 
