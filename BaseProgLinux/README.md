@@ -15,7 +15,7 @@
   * [Socket](/Sockets)
   * [Messages et Mémoire partagé System V](MSGQ)
 * Synchronisation entre processus et/ou thread
-  * [Sémaphore System V](/ProgAvancee/SemaphorePourProc)
+  * [Sémaphore System V](/ProgAvancee/SemaphorePourProc/semaphor)
   * [Sémaphore POSIX](Threads/SemaphoreTh.md)
 
 
