@@ -40,7 +40,7 @@ Voici le sens de quelques signaux de la norme POSIX
 
 * Deux signaux disponibles pour les utilisateurs (SIGUSR1, SIGUSR2)
 
-Voici une liste "brute" des signaux disponible dans Linux (Ubuntu 17.04)
+Voici une liste "brute" des signaux disponibles dans Linux (Ubuntu 17.04)
 
 ```Bash
 $> kill -l
@@ -58,7 +58,7 @@ $> kill -l
 58) SIGRTMAX-6	59) SIGRTMAX-5	60) SIGRTMAX-4	61) SIGRTMAX-3	62) SIGRTMAX-2
 63) SIGRTMAX-1	64) SIGRTMAX	
 ```
-# Les primitive pour la manipulation des signaux
+# Les primitives pour la manipulation des signaux
 
 * Envoyer un signal à un processus
   * int kill (pid_t pid, int sig) `kill (12563, SIGKILL)`
@@ -69,7 +69,7 @@ $> kill -l
   * signal(int sig, fonction) signal(SIGINT, p_hand)
   * sigaction(int sig, struct sigaction action, NULL)
 * Armer une temporisation
-  * int alarm (int seconds) : alarm(10) au bout de seconds unités de temps, le signal SIGALRM est envoyé au processus
+  * int alarm (int seconds) : alarm(10) au bout de seconds secondes, le signal SIGALRM est envoyé au processus
 * Attendre un signal
   * int pause();
 
