@@ -12,7 +12,7 @@ Vous trouverez le premier exemple simple en TCP [Exemple echo client server TCP]
 2. Connexion au serveur
    1. Récupération et initialisation de l'adresse du serveur (gethostbyname ou getaddrinfo) J'utiliserais [getaddrinfo()](../GetAddr)
    2. Connexion primitive [connect()](../API/#connect)
-3. (répétition) Envoi et réception de données (read et write) entre le client et le serveur (une socket est une file descriptor)
+3. (répétition) Envoi et réception de données (read et write) entre le client et le serveur (un socket est un file descriptor)
 4. Fermeture du socket avec la primitive close 
 
 ### Le serveur
@@ -23,7 +23,7 @@ Vous trouverez le premier exemple simple en TCP [Exemple echo client server TCP]
    2. Association de l'adresse au socket avec la primitive [bind()](#bind)
 3. Mise en attente des connexions avec la primitive [listen()](../API/#listen)
 4. Acceptation de la connexion avec la primitive [accept()](../API/#accept)
-5.  (répétition) Envoi et réception de données (read et write) entre le client et le serveur (une socket est une file descriptor)
+5.  (répétition) Envoi et réception de données (read et write) entre le client et le serveur (un socket est un file descriptor)
 6. Fermeture du socket avec la primitive close 
 
 ## Le mode non connecté UDP
