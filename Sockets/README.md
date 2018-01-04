@@ -9,7 +9,7 @@
 
 ## Généralités
 
-Un socket représente une prise par laquelle une application peut envoyer et recevoir des données. Cette prise permet à l'application de se brancher sur un réseau et communiquer avec d'autres applications qui y sont branchées. Les informations écrites sur une prise depuis une machine sont lues sur la prise d'une autre machine, et inversement. Il existe différents modèles de prises, en fonction des protocoles réseau; le plus fréquent sont les socket TCP/IP.C'est un des premiers produits **open source** de l'histoire
+Un socket représente une prise par laquelle une application peut envoyer et recevoir des données. Cette prise permet à l'application de se brancher sur un réseau et communiquer avec d'autres applications qui y sont branchées. Les informations écrites sur une prise depuis une machine sont lues sur la prise d'une autre machine, et inversement. Il existe différents modèles de prises, en fonction des protocoles réseau; le plus fréquent sont les socket TCP/IP. C'est un des premiers produits **open source** de l'histoire
 
 La fonction socket de cette API sert à créer un certain type de prise. Le type de prise sera choisi en fonction de la technologie de communication à utiliser (par exemple TCP/IP). L'API permet à un logiciel serveur de servir plusieurs clients simultanément. Sur les systèmes d'exploitation Linux le programme serveur pourra utiliser la fonction fork ou la création de thread pour chaque demande d'un client.
 
@@ -27,7 +27,7 @@ Des fonctions auxiliaires **gethostbyname** et **getaddrinfo** permettent d'obte
 
 Le mode non connecté (analogue à une communication par courrier), utilisant le protocole UDP. Ce mode nécessite l’adresse de destination à chaque envoi, et aucun accusé de réception n’est donné.
 
-En mode non connecté il n'y a pas de connection établit la socket est directement utilisé, les fonctions send et recv servent respectivement à envoyer et à recevoir des informations.
+En mode non connecté il n'y a pas de connexion établie. Le socket est directement utilisé, les fonctions send et recv servent respectivement à envoyer et à recevoir des informations.
 
 ### type de socket
 

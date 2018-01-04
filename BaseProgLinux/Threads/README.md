@@ -2,15 +2,15 @@
 -----------------|-------------------------------
 Voir aussi <a class="buttons github" href="https://github.com/ISSAE/nsy103/tree/master/BaseProgLinux/Threads">Les exemples: présents dans GitHub</a>
 
-# Les primitive pour thread
-Un thread ou fil (d'exécution) ou tâche (terme et définition normalisés par ISO/CEI 2382-7:2000 ; autres appellations connues : processus léger, fil d'instruction, processus allégé, exétron, voire unité d'exécution1 ou unité de traitement) est similaire à un processus car tous deux représentent l'exécution d'un ensemble d'instructions du langage machine d'un processeur. Du point de vue de l'utilisateur, ces exécutions semblent se dérouler en parallèle. Toutefois, là où chaque processus possède sa propre mémoire virtuelle, les threads d'un même processus se partagent sa mémoire virtuelle. Par contre, tous les threads possèdent leur propre pile d’appel.
+# Les primitives pour thread
+Un thread ou fil (d'exécution) ou tâche (termes et définitions normalisés par ISO/CEI 2382-7:2000 ; autres appellations connues : processus léger, fil d'instructions, processus allégé, exétron, voire unité d'exécution ou unité de traitement) est similaire à un processus car tous deux représentent l'exécution d'un ensemble d'instructions du langage machine d'un processeur. Du point de vue de l'utilisateur, ces exécutions semblent se dérouler en parallèle. Toutefois, là où chaque processus possède sa propre mémoire virtuelle, les threads d'un même processus se partagent sa mémoire virtuelle. Par contre, tous les threads possèdent leur propre pile d’appel.
 
 ## les primitives
 
 * [Création de thread pthread_create](#pthread_create)
 * [Sychronisation entre thread](#pthread_join)
-* [Termonasion de thread](#pthread_exit)
-* [Semaphore pour threads](SemaphoreTh)
+* [Terminaison de thread](#pthread_exit)
+* [Sémaphore pour threads](SemaphoreTh)
 
 
 # pthread_create
@@ -48,13 +48,13 @@ NOM
 ```C
 #include <pthread.h>
 
-int pthread_join(pthread_t thread, void **retval);
+int pthread_join(pthread_t athread, void **retval);
 Compilez et effectuez l'édition des liens avec l'option -pthread.
 ```
        
 
 ## DESCRIPTION
-La fonction pthread_join()  attend que le thread spécifié par thread se termine. Si ce thread s'est déjà terminé, pthread_join() revient tout de suite. Le thread spécifié par thread doit être joignable.
+La fonction pthread_join()  attend que le thread - spécifié par le premier paramètre de la fonction pthread_join, athread - se termine. Si ce thread s'est déjà terminé, pthread_join() revient tout de suite. Le thread spécifié par athread doit être joignable.
 
 Si retval n'est pas NULL, pthread_join() copie la valeur de sortie du thread cible (c'est-à-dire la valeur que le thread cible a fournie à [pthread_exit](#pthread_exit)  dans l'emplacement pointé par *retval. Si le thread cible est annulé, PTHREAD_CANCELED est placé dans *retval.
 
@@ -88,4 +88,4 @@ Obtenir l'identifiant du thread appelant
 ```
 
 ## DESCRIPTION
-La  fonction  pthread_self()  renvoie l'identifiant du thread appelant. C'est la même valeur qui est  renvoyée  dans  *thread  dans  l'appel  à [pthread_create](#pthread_create)  qui a créé ce thread.
+La  fonction  pthread_self()  renvoie l'identifiant du thread appelant. C'est la même valeur qui est  renvoyée  dans  *thread  dans  l'appel  à [pthread_create](#pthread_create)  qui a créée ce thread.
